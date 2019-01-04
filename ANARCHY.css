@@ -1,0 +1,448 @@
+html body .barraLateral-left .barraLateral-right{
+	min-height: 100% !important;
+    height: 100% !important;
+}
+body{	
+	overflow-x: hidden;
+	background-image: url('images/fondo-min-min.jpg'); background-color: black; background-repeat: no-repeat; background-size: 100%;	
+	
+}
+.abrirPanelLateral{
+	width: 25px;
+	height: 100% ;	
+	position:fixed; 
+	top: 0px;
+	background-color: rgba(0,0,0,.4);		
+	z-index: 4;	
+	cursor: pointer;
+}
+.abrirPanelLateral-right{
+	right: 0px;	
+}
+
+.abrirPanelLateral > h4 > span{
+	background-color: rgba(0,0,0,.7); 	
+	width: inherit;
+	height: 50px;
+	line-height: 50px;
+	text-align: center; 
+	color: white;	
+
+	margin: auto;
+	position: absolute;
+	top: 0; left: 0; bottom: 0; right: 0;
+}
+
+.abrirPanelLateral-left > h4 > span{
+	border-top-right-radius: 50%; 
+	border-bottom-right-radius: 50%; 	
+}
+
+.abrirPanelLateral-right > h4 > span{	
+	border-top-left-radius: 50%; 
+	border-bottom-left-radius: 50%; 	
+}
+
+.panelLateral{
+	background-color: #00000030;
+	z-index: 3;
+
+	position: absolute;
+	top: 0px;
+
+	width: 50%;
+	height: 100%;
+
+	padding: 25px;
+	padding-left: 50px;
+	padding-right: 50px;
+
+	overflow-y: scroll;
+}
+
+#panelLateral-left{
+	background-image: radial-gradient(at right 50%, #fffd, #0003);	
+	border-right: 5px solid #001;	
+	
+	left: -50%;
+
+	-webkit-transition: left 3s;
+	-moz-transition: left 3s;
+	-o-transition: left 3s;
+  	transition: left 3s;
+}
+#panelLateral-right{		
+	background-image: radial-gradient(at left 50%, #fffd, #0003);	
+	border-left: 5px solid #001;			
+	
+	right: -50%;
+
+	-webkit-transition: right 3s;
+	-moz-transition: right 3s;
+	-o-transition: right 3s;
+  	transition: right 3s;
+}
+
+/*Esta maravilla quita las scrollbar XD*/
+::-webkit-scrollbar{  
+    width:0px;
+}
+
+#botonMedio{
+
+	opacity: 0;
+	display: none;
+
+	position: absolute;
+	width: 150px;
+	top: 50%;
+	left: 50%;		
+  	transform: translate(-50%, -50%);
+	z-index: 4;
+	background-color: white;
+	border-radius: 50%;	
+	cursor: pointer;
+
+	-webkit-transition: width 1s, background-color 1s, opacity 1.5s;
+	-moz-transition: width 1s, background-color 1s, opacity 1.5s;
+	-o-transition: width 1s, background-color 1s, opacity 1.5s;
+  	transition: width 1s, background-color 1s, opacity 1.5s;
+}
+
+#botonMedio:hover{
+	background-color: #555566;
+	width: 160px;
+}
+
+#botonMedio > img{
+	border: 5px solid #001;	
+	border-radius: 50%;	
+	width: inherit;
+	padding: 5px;
+}
+
+
+
+.panel-group > .card {
+	margin-bottom: 0px;
+	max-height: 400px;
+	overflow-y: scroll;
+}
+
+
+.panel-title{
+	background-color: #dedede;
+}
+
+.flex{
+	display: flex;
+}
+
+hr{
+	color: black;
+	border-color: black;
+	background-color: black;
+}
+
+.card-avatar{
+	width: 125px;
+	height: 100%;
+}
+.card-img{
+	margin-right: 15px;
+	width: 100%;
+}
+/*------------------------------  Esto es THEME.css del Anarchy II original ---------------------------*/
+.ui-tabs.ui-tabs-top > .ui-tabs-nav {
+    background-color: #FFA600;
+}
+
+.color-prin{
+    background-color: #FFA600!important;
+}
+
+input {  
+    padding: 5px;
+    width: 99%;
+}
+
+/* Mark input boxes that gets an error on validation: */
+input.invalid {
+    background-color: #ffdddd;
+}
+
+/* Hide all steps by default: */
+.tab {
+    height: 300px;
+    padding: 5px;
+    background-color:  rgba(255,255,255,0.8);
+    display: none;
+    overflow-y: scroll;
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #FFA600;
+    border: none; 
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.5;
+}
+
+/* Mark the active step: */
+.step.active {
+    opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+    background-color: #FF0000;
+    opacity: 0.7;
+}
+
+.borde{
+    border: 5px groove #999999;
+}
+
+.fondo{
+    color:black;
+    background: rgba(255,255,255,0.8);
+    text-align: center;
+    padding: 3px;
+}
+
+.mywizard{
+    height: 350px;
+    overflow-y: scroll;
+}
+
+.label-sup{
+    padding: 3px;
+    width: 100%;
+    background-color: #ffcc00;
+    border-radius: 5px;
+    border: 2px #ff9900 solid;
+    border-bottom: 3px #996600 solid;
+    border-top: 1px beige solid;
+}
+
+.boton{
+    padding: 3px;
+    width: 100%;
+    background-color: #999999 !important;
+    font-weight: bold!important;
+    color: black!important;
+    border-radius: 5px!important;
+    border: 2px darkgray solid!important;
+    border-bottom: 3px gray solid!important;
+    border-top: 1px white solid!important;
+}
+
+.bold{
+    font-weight: bold;    
+}
+
+
+/*++++++++  wizard ++++++++++*/
+
+.wizard {
+    margin:auto;
+    width: 90%;
+}
+
+.wizard .nav-tabs {
+    position: relative;
+    margin: auto;
+    padding-bottom: 10px;
+    border-bottom: #fff solid 3px;
+}
+
+.wizard > div.wizard-inner {
+    position: relative;
+}            
+
+.wizard .nav-tabs > li.active > a, .wizard .nav-tabs > li.active > a:hover, .wizard .nav-tabs > li.active > a:focus {
+    color: #555555;
+    cursor: default;
+    border: 0;
+    border-bottom-color: transparent;
+}
+
+span.round-tab {
+    width: 30px;
+    height: 30px;                
+    display: inline-block;
+    border-radius: 100px;
+    background: #fff;
+    border: 3px solid #e0e0e0;
+    z-index: 2;
+    position: absolute;
+    left: 0px;
+    text-align: center;                
+    font-size: 15px;
+}
+span.round-tab i{
+    color:#555555;
+    vertical-align: middle;
+}
+.wizard li.active span.round-tab {
+    background: #ffcc00;
+    border: 2px solid #fff;
+
+}
+.wizard li.active span.round-tab i{
+    color: #333;
+}
+
+span.round-tab:hover {
+    color: #333;
+    border: 2px solid #333;
+    background: #ffcc00;
+    cursor: default;
+}
+
+.wizard .nav-tabs > li {
+    width: 14%;    
+}
+
+.wizard li:after {
+    content: " ";
+    position: absolute;
+    left: 46%;
+    opacity: 0;
+    margin: 0 auto;
+    bottom: 0px;
+    border: 5px solid transparent;
+    border-bottom-color: #5bc0de;
+    transition: 0.1s ease-in-out;
+}
+
+.wizard li.active:after {
+    content: " ";
+    position: absolute;
+    left: 46%;
+    opacity: 1;
+    margin: auto;
+    bottom: 0px;
+    border: 10px solid transparent;                
+}
+
+.wizard .nav-tabs > li a {
+    width: 20px;
+    height: 20px;
+    margin: 5px auto;
+    border-radius: 100%;
+    padding: 0;
+}
+
+.wizard .nav-tabs > li a:hover {
+    background: transparent;
+}
+
+.wizard .tab-pane {
+    position: relative;
+    padding-top: 20px;
+}
+
+.wizard h3 {
+    margin-top: 0;
+}
+
+@media( max-width : 585px ) {
+
+    .wizard {
+        width: 90%;
+
+    }
+
+    span.round-tab {
+        font-size: 16px;
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+    }
+
+    .wizard .nav-tabs > li a {
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+    }
+
+    .wizard li.active:after {
+        content: " ";
+        position: absolute;
+        left: 35%;
+    }
+}
+.icon-paint-format:before {
+    content: "\e90c";
+}
+
+.disabled:hover{
+    cursor: not-allowed;
+}
+
+#mensajito{
+    opacity: 0.7;
+    height: 150px;
+    width: 400px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 2;
+    border-radius: 20px;
+    border-bottom: #333 solid 5px;    
+    border-right: #333 solid 7px;    
+    font-size: 18px;
+    color: black;
+    padding: 20px;
+    /*padding-left: 30px;*/
+}
+#mensajito.oculto{display: none;}
+#mensajito.info{background-color: white;}
+#mensajito.success{background-color: greenyellow;}
+#mensajito.warning{background-color: yellow;}
+#mensajito.danger{background-color: red;}
+
+.uploadZone{
+    height: 150px;
+    width: 150px;
+    margin: auto;
+    border: #996600 dashed 1px;    
+}
+.upload{
+    cursor: pointer;
+}
+
+/* ------------ ayuda ------------ */
+
+.ayuda{
+    position: absolute;
+    border: solid #5bc0de 1px;
+    border-radius: 10px;
+    padding: 5px;
+    width: 250px;
+    background-color: white;
+    box-shadow: 6px 6px 5px #999;
+    -webkit-box-shadow: 6px 6px 5px #999;
+    -moz-box-shadow: 6px 6px 5px #999;
+    visibility: hidden;
+    z-index: 5000;
+}
+.boton-ayuda{
+    width: 15px;
+    height: 15px;
+    border-radius: 20px;
+    background: #fff;
+    border: 2px solid #e0e0e0;    
+    text-align: center;         
+    font-size: 10px;
+    vertical-align: middle;
+}
+.boton-ayuda:hover{    
+    background: #ffcc00;
+    border: 1px solid #000;
+}

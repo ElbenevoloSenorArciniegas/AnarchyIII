@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+
+
+    <!-- Mirrored from webapplayers.com/inspinia_admin-v2.7.1/form_wizard.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 16 Nov 2017 03:04:47 GMT -->
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>INSPINIA | Wizards</title>
+
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+        <link href="css/plugins/iCheck/custom.css" rel="stylesheet">
+        <link href="css/plugins/steps/jquery.steps.css" rel="stylesheet">
+        <link href="css/animate.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+
+
+        <link href="css/plugins/dropzone/basic.css" rel="stylesheet">
+        <link href="css/plugins/dropzone/dropzone.css" rel="stylesheet">
+        <link href="css/plugins/jasny/jasny-bootstrap.min.css" rel="stylesheet">
+        <link href="css/plugins/codemirror/codemirror.css" rel="stylesheet">
+
+
+
+        <!-- ANARCHY styles -->
+
+        <link rel="stylesheet" type="text/css" href="ANARCHY.css">
+        <link rel="stylesheet" type="text/css" href="css/mensaje.css">
+        <link rel="stylesheet" type="text/css" href="css/consola.css">
+        <script type="text/javascript" src="ANARCHY.js"></script>
+        <script type="text/javascript" src="js/mensaje.js"></script>
+        <script type="text/javascript" src="js/consola.js"></script>
+
+
+
+    </head>
+
+    <!--<body >-->
+        <body onload="CargaInicial()">
+
+        <aside id="panelLateral-left" class="panelLateral">            
+            <div class="panel-group" id="accordion">
+                <div class="card">
+                    <div class="card-body panel-title">
+                        <h4>
+                            <a id="tabInicial" data-toggle="collapse" data-parent="#accordion" href="#collapse1" >
+                                ¿Nuevo en Anarchy?</a>
+                        </h4>
+                    </div>
+                    <div id="collapse1" class="panel-collapse collapse in">
+                        <div class="card-body ">                    
+                            <div class="flex">
+                                <img src="images/RichUncleSkeleton.png" class="card-avatar">
+                                <div>
+                                    <h5 class="card-title">Arma tu modelo de datos</h5>
+                                    <p class="card-text ">
+                                        Diseña tu base de datos y préstanos el SQL un instante para mapear las tablas y armar los objetos del proyecto. 
+                                    </p>                            
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="flex">                        
+                                <div class="align-der">
+                                    <h5 class="card-title">Dinos cómo quieres que esté hecho el proyecto</h5>
+                                    <p class="card-text ">
+                                        Establece el lenguaje de programación, quién se encargará de manejar los datos, cómo quieres que se vea, entre otras opciones.
+                                    </p>
+                                </div>
+                                <img src="images/gatoMistico.png" class="card-avatar">
+                            </div>
+                            <hr>
+                            <div class="flex">
+                                <img src="images/Merlina.png" class="card-avatar">
+                                <div>
+                                    <h5 class="card-title">Dinos cómo quieres que funcione</h5>
+                                    <p class="card-text ">
+                                        Entréganos una lista de requerimientos funcionales y ve a comer algo mientras nuestros esclavos los programan. Tendrás el código fuente listo para descargar en unos pocos segundos.
+                                    </p>                            
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body panel-title">
+                        <h4>
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse2" >
+                                Genial, ya generé el código ¿y ahora qué?</a>
+                        </h4>
+                    </div>
+                    <div id="collapse2" class="panel-collapse collapse ">
+                        <div class="card-body">
+                            <p class="card-text ">
+                                Hay 4 pequeñísimos pasos que debes realizar en tu código generado para que pueda funcionar:
+                            </p>
+                            <h5 class="card-title">1. Propiedades de base de datos</h5>
+                            <h6 class="card-subtitle">back/dao/properties</h6>
+                            <div class="flex">
+                                <img class="card-img" src="images/manual/properties.jpg">
+                                <p class="card-text ">
+                                    Este archivo es importante en extremo. En él deben colocarse los datos de acceso a cada base de datos que vaya a utilizar.
+                                    <br>
+                                    DB_NAME debe ser cambiado por (¡adivinaste!) el nombre de la base de datos. Recuerde que debe coincidir con el utilizado en el controlador (paso 2).
+                                    <br>
+                                    host debe tener la url donde se aloja la base de datos, incluyendo el puerto.
+                                    <br>
+                                    username contendrá el nombre de acceso a la base de datos, y password (¡adivinas otra vez!) la contraseña para el mismo fin. 
+                                </p>
+                            </div>                    
+                            <hr>
+                            <h5 class="card-title">2. Controlador global</h5>
+                            <h6 class="card-subtitle">back/facade/globalController</h6>
+                            <p class="card-text ">
+                                Define nuevamente el nombre de la base de datos y el gestor de conexión a la misma en los campos <i> DEFAULT_DBNAME y DEFAULT_GESTOR</i>
+                                <br>
+                                Actualmente Anarchy soporta las constantes:
+                            <ul>
+                                <li>MYSQL_FACTORY</li>
+                                <li>POSTGRESQL_FACTORY</li>
+                                <li>ORACLE_FACTORY</li>
+                            </ul>
+                            </p>
+                            <hr>
+                            <h5 class="card-title">3. Ruta del archivo properties</h5>
+                            <h6 class="card-subtitle">back/Dao/conexion</h6>
+                            <strong>Sólo necesario para proyectos Java web.</strong>                    
+                            <p class="card-text ">
+                                Define la ruta absoluta del archivo properties.ini (sí, el del primer paso) dentro del método <i>leerProperties()</i> para que pueda ser leido, ya que la ruta relativa puede fallar en tiempo de ejecución.
+                            </p>
+                            <hr>
+                            <h5 class="card-title">4. Make Anarchy great again!</h5>                     
+                            <p class="card-text ">
+                                Y así terminamos nuestro curso intensivo. ¿Difícil?
+                                <br>
+                                De ahora en adelante, cada bug será culpa tuya; a menos, claro, que nos dones cualquier dinerillo que te nazca del corazón para que sigamos creciendo. También, si quieres, puedes darnos tu alma.
+                                <br>
+                            <div style="text-align: center">
+                                \($ w $)/
+                                <br>
+                                Necesito un alma, cualquiera ¡La tuya! 
+                                <br>
+                                \($ w $)/
+                            </div>
+                            <br>
+                            Recuerda, nuestra meta es hacer a los programadores cada vez más vagos.                        
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>                
+        </aside>        
+        <aside id="panelLateral-right" class="panelLateral">
+
+            <!--       ---------------------  BEGIN OF STARS ---------------------------           -->            
+            <div class="card widget-ratings">                        
+                <div class="card-body text-center">
+                    <h4 class="card-title">Cantidad de proyectos generados: <span id="numProyectos">12</span></h4> 
+                    <h4 class="card-title">Cantidad de lineas generadas: <span id="numLineas">12829634</span></h4> 
+                    <h4 class="card-title">Calificación promedio: 4.0</h4>
+
+                    <div class="widget-ratings__star">
+                        <i class="zmdi zmdi-star active"></i>
+                        <i class="zmdi zmdi-star active"></i>
+                        <i class="zmdi zmdi-star active"></i>
+                        <i class="zmdi zmdi-star active"></i>
+                        <i class="zmdi zmdi-star"></i>
+                    </div>                            
+                </div>
+            </div>
+
+            <!--       ---------------------  END OF STARS ---------------------------           -->
+            <!--       ---------------------  BEGIN OF COMMENTS ---------------------------           -->
+
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Recent Posts</h4>
+                    <h6 class="card-subtitle">Venenatis portauam Inceptos ameteiam</h6>
+                </div>
+
+                <div class="listview listview--hover">
+                    <a class="listview__item">
+                        <img src="demo/img/profile-pics/1.jpg" class="listview__img" alt="">
+
+                        <div class="listview__content">
+                            <div class="listview__heading">Jeannette Lawson</div>
+                            <p>Donec congue tempus ligula, varius hendrerit mi hendrerit sit amet. Duis ac quam sit amet leo feugiat iaculis</p>
+                        </div>
+                    </a>
+
+                    <a class="listview__item">
+                        <img src="demo/img/profile-pics/2.jpg" class="listview__img" alt="">
+
+                        <div class="listview__content">
+                            <div class="listview__heading">David Villa Jacobs</div>
+                            <p>Sorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam mattis lobortis sapien non posuere</p>
+                        </div>
+                    </a>
+
+                    <a class="listview__item">
+                        <img src="demo/img/profile-pics/3.jpg" class="listview__img" alt="">
+
+                        <div class="listview__content">
+                            <div class="listview__heading">Candice Barnes</div>
+                            <p>Quisque non tortor ultricies, posuere elit id, lacinia purus curabitur</p>
+                        </div>
+                    </a>
+
+                    <a class="listview__item">
+                        <img src="demo/img/profile-pics/4.jpg" class="listview__img" alt="">
+
+                        <div class="listview__content">
+                            <div class="listview__heading">Darla Mckinney</div>
+                            <p>Duis tincidunt augue nec sem dignissim scelerisque. Vestibulum rhoncus sapien sed nulla aliquam lacinia</p>
+                        </div>
+                    </a>
+
+                    <a class="listview__item">
+                        <img src="demo/img/profile-pics/5.jpg" class="listview__img" alt="">
+
+                        <div class="listview__content">
+                            <div class="listview__heading">Rudolph Perez</div>
+                            <p>Phasellus a ullamcorper lectus, sit amet viverra quam. In luctus tortor vel nulla pharetra bibendum</p>
+                        </div>
+                    </a>
+
+                    <a href="#" class="view-more">View All Posts</a>
+                </div>
+            </div>
+            <!--       ---------------------  END OF COMMENTS ---------------------------           -->                    
+        </aside>    
+        <div id="botonMedio" onclick="ocultarPanelesLaterales()">
+            <img src="images/logo.png">
+        </div> 
+
+        <div id="botonPanelLateral-left" class=" abrirPanelLateral abrirPanelLateral-left " onclick="abrirPanelLateral(true)">
+            <h4><span id="botonPL-L">></span></h4>
+        </div>
+        <div id="botonPanelLateral-right" class=" abrirPanelLateral abrirPanelLateral-right " onclick="abrirPanelLateral(false)">
+            <h4><span id="botonPL-R"><</span></h4>
+        </div> 
+
+        <div id="wrapper">
+            <div class="wrapper wrapper-content ">
+
+                <div style="width: 75%; margin: auto; margin-top: 15px">
+                    <div >
+                        <img src="images/name2.png" style="display: block; margin: auto; width: 80%; height: 175px"/>
+                    </div>
+                    <div class="borde fondo" id="frase" style="padding: 7px">
+                        Esta es una cochina frase hecha a palito ( -w-)
+                    </div>            
+                    <div  class="fondo mywizard borde">
+
+                        <div >
+                            <div class="tabs-container">
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li><a class="nav-link active" data-toggle="tab" href="#tab-1">Base de datos</a></li>
+                                    <li><a class="nav-link" data-toggle="tab" href="#tab-2">Vista</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div role="tabpanel" id="tab-1" class="tab-pane active">
+                                        <div class="panel-body">
+                                            <div class="row">
+                                                <div class="col col-sm-12 col-md-6">
+                                                    <form action="/anarchyBack/subir" class="dropzone" id="dropzoneForm">
+                                                        <div class="fallback">
+                                                            <input name="file" type="file" />
+                                                        </div>
+                                                    </form>  
+                                                </div>
+                                                <div class="col col-sm-12 col-md-6">
+                                                    Diseñar directamente la base de datos
+                                                </div>
+                                            </div>                                            
+                                        </div>
+                                    </div>
+                                    <div role="tabpanel" id="tab-2" class="tab-pane">
+                                        <div class="panel-body">
+                                            <strong>Donec quam felis</strong>
+
+                                            <p>Thousand unknown plants are noticed by me: when I hear the buzz of the little world among the stalks, and grow familiar with the countless indescribable forms of the insects
+                                                and flies, then I feel the presence of the Almighty, who formed us in his own image, and the breath </p>
+
+                                            <p>I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite
+                                                sense of mere tranquil existence, that I neglect my talents. I should be incapable of drawing a single stroke at the present moment; and yet.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>                        
+                    </div>
+                </div>    
+
+            </div>            
+        </div>
+
+
+
+        <!-- Mainly scripts -->
+        <script src="js/jquery-3.1.1.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+        <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+        <!-- Custom and plugin javascript -->
+        <script src="js/inspinia.js"></script>
+        <script src="js/plugins/pace/pace.min.js"></script>
+
+        <!-- Steps -->
+        <script src="js/plugins/steps/jquery.steps.min.js"></script>
+
+        <!-- Jquery Validate -->
+        <script src="js/plugins/validate/jquery.validate.min.js"></script>
+
+
+
+
+
+        <!-- Jasny -->
+        <script src="js/plugins/jasny/jasny-bootstrap.min.js"></script>
+
+        <!-- DROPZONE -->
+        <script src="js/plugins/dropzone/dropzone.js"></script>
+
+        <!-- CodeMirror -->
+        <script src="js/plugins/codemirror/codemirror.js"></script>
+        <script src="js/plugins/codemirror/mode/xml/xml.js"></script>
+        <script>
+            $(document).ready(function () {
+                $("#wizard").steps();
+                $("#form").steps({
+                    bodyTag: "fieldset",
+                    onStepChanging: function (event, currentIndex, newIndex)
+                    {
+                        // Always allow going backward even if the current step contains invalid fields!
+                        if (currentIndex > newIndex)
+                        {
+                            return true;
+                        }
+
+                        // Forbid suppressing "Warning" step if the user is to young
+                        if (newIndex === 3 && Number($("#age").val()) < 18)
+                        {
+                            return false;
+                        }
+
+                        var form = $(this);
+
+                        // Clean up if user went backward before
+                        if (currentIndex < newIndex)
+                        {
+                            // To remove error styles
+                            $(".body:eq(" + newIndex + ") label.error", form).remove();
+                            $(".body:eq(" + newIndex + ") .error", form).removeClass("error");
+                        }
+
+                        // Disable validation on fields that are disabled or hidden.
+                        form.validate().settings.ignore = ":disabled,:hidden";
+
+                        // Start validation; Prevent going forward if false
+                        return form.valid();
+                    },
+                    onStepChanged: function (event, currentIndex, priorIndex)
+                    {
+                        // Suppress (skip) "Warning" step if the user is old enough.
+                        if (currentIndex === 2 && Number($("#age").val()) >= 18)
+                        {
+                            $(this).steps("next");
+                        }
+
+                        // Suppress (skip) "Warning" step if the user is old enough and wants to the previous step.
+                        if (currentIndex === 2 && priorIndex === 3)
+                        {
+                            $(this).steps("previous");
+                        }
+                    },
+                    onFinishing: function (event, currentIndex)
+                    {
+                        var form = $(this);
+
+                        // Disable validation on fields that are disabled.
+                        // At this point it's recommended to do an overall check (mean ignoring only disabled fields)
+                        form.validate().settings.ignore = ":disabled";
+
+                        // Start validation; Prevent form submission if false
+                        return form.valid();
+                    },
+                    onFinished: function (event, currentIndex)
+                    {
+                        var form = $(this);
+
+                        // Submit form input
+                        form.submit();
+                    }
+                }).validate({
+                    errorPlacement: function (error, element)
+                    {
+                        element.before(error);
+                    },
+                    rules: {
+                        confirm: {
+                            equalTo: "#password"
+                        }
+                    }
+                });
+            });
+        </script>
+
+        <script>
+            Dropzone.options.dropzoneForm = {
+                paramName: "file", // The name that will be used to transfer the file
+                maxFilesize: 2, // MB
+                acceptedFiles: ".sql,.chy",
+                maxFiles: 1,
+                init: function () {
+                    this.on("maxfilesexceeded", function (file) {
+                        alert("No more files please!");
+                    });
+                },
+                dictDefaultMessage: "<h1><i class='fa fa-upload'></i></h1><br><strong>Sube tu SQL o CHY</strong></br>"
+            };
+
+            $(document).ready(function () {
+
+                var editor_one = CodeMirror.fromTextArea(document.getElementById("code1"), {
+                    lineNumbers: true,
+                    matchBrackets: true
+                });
+
+                var editor_two = CodeMirror.fromTextArea(document.getElementById("code2"), {
+                    lineNumbers: true,
+                    matchBrackets: true
+                });
+
+                var editor_two = CodeMirror.fromTextArea(document.getElementById("code3"), {
+                    lineNumbers: true,
+                    matchBrackets: true
+                });
+
+            });
+        </script>
+
+    </body>
+
+
+    <!-- Mirrored from webapplayers.com/inspinia_admin-v2.7.1/form_wizard.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 16 Nov 2017 03:04:48 GMT -->
+</html>

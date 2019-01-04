@@ -1,0 +1,38 @@
+
+/*--------------------------Consola de comandos*/
+.consola{	
+
+	font-family: "Lucida Console", "Lucida Sans Typewriter",monospace, monaco, "Bitstream Vera Sans Mono";	 
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 700;
+	line-height: 20px;
+	
+	margin:auto;
+	max-width: 33%;
+	margin-top: -150px;
+
+	border-radius: 5px;
+	border: 5px ridge darkgray;
+
+	z-index: 4;	
+
+	-webkit-transition: margin 2s;
+	-moz-transition: margin 2s;
+	-o-transition: margin 2s;
+  	transition: margin 2s;
+
+}
+.consola-header{
+	padding: 2px;
+	padding-left: 10px;
+	background-color: #eee;
+	border-bottom-style: double; 
+}
+.consola-body{
+	background-color: black;
+	color: #44ff00;
+	padding: 10px;
+	height: 100px;
+	display: flex;
+}
