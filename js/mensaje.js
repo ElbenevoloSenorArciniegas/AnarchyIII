@@ -6,10 +6,15 @@
 		avatar="random/skeleton/gato/..."
 	}
 */
-function mostrarMensajito(json) {
+function mostrarMensajito(json) {    
 	document.getElementById("mensaje-titulo").innerHTML=json.titulo;
 	document.getElementById("mensaje-cuerpo").innerHTML=json.cuerpo;
-	document.getElementById("mensaje-avatar").src="images/"+json.avatar;
+        if(json.avatar!=null){
+            document.getElementById("mensaje-avatar").src="images/"+json.avatar;
+            document.getElementById("mensaje-avatar").style.display="initial";
+        }else{
+            document.getElementById("mensaje-avatar").style.display="none";
+        }
 	var mensaje=document.getElementById("mensaje");	
 	var color="#fff";
 	switch(json.tipo){

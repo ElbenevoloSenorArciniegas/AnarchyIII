@@ -8,7 +8,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>INSPINIA | Wizards</title>
+        <title>(x.x ) Anarchy ( x.x)</title>
 
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
@@ -33,20 +33,33 @@
         <script type="text/javascript" src="ANARCHY.js"></script>
         <script type="text/javascript" src="js/mensaje.js"></script>
         <script type="text/javascript" src="js/consola.js"></script>
+        <script type="text/javascript" src="js/Ajax.js"></script>
 
 
 
     </head>
 
     <!--<body >-->
-        <body onload="CargaInicial()">
+    <body onload="CargaInicial()">
 
+        <!-- mensajitooooo alert o como se llame-->
+        <div id="mensaje" class="card text-white  mensaje" >	 
+            <div class="card-body box">	  	
+                <img id="mensaje-avatar" src="" class="mensaje-avatar" alt="avatar">
+                <div >
+                    <h5 id="mensaje-titulo" class="card-title">Mapeo completo</h5>
+                    <p id="mensaje-cuerpo" class="card-text">Fueron encontradas 5 entidades. Ahora puedes continuar con las configuraciones del proyecto.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- -------- paneles o puertas -->
         <aside id="panelLateral-left" class="panelLateral">            
             <div class="panel-group" id="accordion">
                 <div class="card">
                     <div class="card-body panel-title">
                         <h4>
-                            <a id="tabInicial" data-toggle="collapse" data-parent="#accordion" href="#collapse1" >
+                            <a id="tabInicial"  data-toggle="collapse" data-parent="#accordion" href="#collapse1" >
                                 ¿Nuevo en Anarchy?</a>
                         </h4>
                     </div>
@@ -159,7 +172,7 @@
                 <div class="card-body text-center">
                     <h4 class="card-title">Cantidad de proyectos generados: <span id="numProyectos">12</span></h4> 
                     <h4 class="card-title">Cantidad de lineas generadas: <span id="numLineas">12829634</span></h4> 
-                    <h4 class="card-title">Calificación promedio: 4.0</h4>
+                    <h4 class="card-title">Calificación promedio: <span id="calificacion"></span></h4>
 
                     <div class="widget-ratings__star">
                         <i class="zmdi zmdi-star active"></i>
@@ -265,7 +278,7 @@
                                         <div class="panel-body">
                                             <div class="row">
                                                 <div class="col col-sm-12 col-md-6">
-                                                    <form action="/anarchyBack/subir" class="dropzone" id="dropzoneForm">
+                                                    <form action="/Anarchyback/cargar" class="dropzone" id="dropzoneForm">
                                                         <div class="fallback">
                                                             <input name="file" type="file" />
                                                         </div>
@@ -330,89 +343,10 @@
         <!-- CodeMirror -->
         <script src="js/plugins/codemirror/codemirror.js"></script>
         <script src="js/plugins/codemirror/mode/xml/xml.js"></script>
-        <script>
-            $(document).ready(function () {
-                $("#wizard").steps();
-                $("#form").steps({
-                    bodyTag: "fieldset",
-                    onStepChanging: function (event, currentIndex, newIndex)
-                    {
-                        // Always allow going backward even if the current step contains invalid fields!
-                        if (currentIndex > newIndex)
-                        {
-                            return true;
-                        }
-
-                        // Forbid suppressing "Warning" step if the user is to young
-                        if (newIndex === 3 && Number($("#age").val()) < 18)
-                        {
-                            return false;
-                        }
-
-                        var form = $(this);
-
-                        // Clean up if user went backward before
-                        if (currentIndex < newIndex)
-                        {
-                            // To remove error styles
-                            $(".body:eq(" + newIndex + ") label.error", form).remove();
-                            $(".body:eq(" + newIndex + ") .error", form).removeClass("error");
-                        }
-
-                        // Disable validation on fields that are disabled or hidden.
-                        form.validate().settings.ignore = ":disabled,:hidden";
-
-                        // Start validation; Prevent going forward if false
-                        return form.valid();
-                    },
-                    onStepChanged: function (event, currentIndex, priorIndex)
-                    {
-                        // Suppress (skip) "Warning" step if the user is old enough.
-                        if (currentIndex === 2 && Number($("#age").val()) >= 18)
-                        {
-                            $(this).steps("next");
-                        }
-
-                        // Suppress (skip) "Warning" step if the user is old enough and wants to the previous step.
-                        if (currentIndex === 2 && priorIndex === 3)
-                        {
-                            $(this).steps("previous");
-                        }
-                    },
-                    onFinishing: function (event, currentIndex)
-                    {
-                        var form = $(this);
-
-                        // Disable validation on fields that are disabled.
-                        // At this point it's recommended to do an overall check (mean ignoring only disabled fields)
-                        form.validate().settings.ignore = ":disabled";
-
-                        // Start validation; Prevent form submission if false
-                        return form.valid();
-                    },
-                    onFinished: function (event, currentIndex)
-                    {
-                        var form = $(this);
-
-                        // Submit form input
-                        form.submit();
-                    }
-                }).validate({
-                    errorPlacement: function (error, element)
-                    {
-                        element.before(error);
-                    },
-                    rules: {
-                        confirm: {
-                            equalTo: "#password"
-                        }
-                    }
-                });
-            });
-        </script>
 
         <script>
             Dropzone.options.dropzoneForm = {
+                dictDefaultMessage: "<h1><i class='fa fa-upload'></i></h1><br><strong>Sube tu SQL o CHY</strong></br>",
                 paramName: "file", // The name that will be used to transfer the file
                 maxFilesize: 2, // MB
                 acceptedFiles: ".sql,.chy",
@@ -422,27 +356,72 @@
                         alert("No more files please!");
                     });
                 },
-                dictDefaultMessage: "<h1><i class='fa fa-upload'></i></h1><br><strong>Sube tu SQL o CHY</strong></br>"
+                sending: function () {
+                    var msg = {
+                        tipo: "info",
+                        titulo: "Subiendo",
+                        cuerpo: "Espera mientras el servidor hace su magia",
+                        avatar: "gatoMistico.png"
+                    };
+                    mostrarMensajito(msg);
+                },
+                success: function (file, response) {
+                    //alert(response);
+                    var json = JSON.parse(response);
+                    var tipo = "dark";
+                    var titulo = json.msg;
+                    var cuerpo = "";
+                    switch (json.tipo) {
+                        case "Success":
+                        {
+                            tipo = "success";
+                            //manage beans y attbs
+                            cuerpo = "Fueron encontradas "
+                                    + json.cuerpo.length
+                                    + " entidades. Ahora puedes continuar con las configuraciones del proyecto.";
+                            break;
+                        }
+                        case "Error":
+                        {
+                            tipo = "warning";
+                            cuerpo = json.cuerpo;
+                            break;
+                        }
+                        case "Fail":
+                        {
+                            tipo = "danger";
+                            cuerpo = json.cuerpo;
+                            break;
+                        }
+                    }
+                    var msg = {
+                        tipo: tipo,
+                        titulo: titulo,
+                        cuerpo: cuerpo,
+                        avatar: "gatoMistico.png"
+                    };
+                    mostrarMensajito(msg);
+                }
             };
 
-            $(document).ready(function () {
-
-                var editor_one = CodeMirror.fromTextArea(document.getElementById("code1"), {
-                    lineNumbers: true,
-                    matchBrackets: true
-                });
-
-                var editor_two = CodeMirror.fromTextArea(document.getElementById("code2"), {
-                    lineNumbers: true,
-                    matchBrackets: true
-                });
-
-                var editor_two = CodeMirror.fromTextArea(document.getElementById("code3"), {
-                    lineNumbers: true,
-                    matchBrackets: true
-                });
-
-            });
+            /*$(document).ready(function () {
+             
+             var editor_one = CodeMirror.fromTextArea(document.getElementById("code1"), {
+             lineNumbers: true,
+             matchBrackets: true
+             });
+             
+             var editor_two = CodeMirror.fromTextArea(document.getElementById("code2"), {
+             lineNumbers: true,
+             matchBrackets: true
+             });
+             
+             var editor_two = CodeMirror.fromTextArea(document.getElementById("code3"), {
+             lineNumbers: true,
+             matchBrackets: true
+             });
+             
+             });*/
         </script>
 
     </body>
