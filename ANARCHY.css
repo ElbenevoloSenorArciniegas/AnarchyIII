@@ -123,7 +123,7 @@ body{
 
 
 
-.panel-group > .card {
+.panel-group > .ibox {
 	margin-bottom: 0px;
 	max-height: 400px;
 	overflow-y: scroll;
@@ -138,17 +138,13 @@ body{
 	display: flex;
 }
 
-hr{
-	color: black;
-	border-color: black;
-	background-color: black;
-}
 
-.card-avatar{
+
+.ibox-avatar{
 	width: 125px;
 	height: 100%;
 }
-.card-img{
+.ibox-img{
 	margin-right: 15px;
 	width: 100%;
 }

@@ -23,7 +23,7 @@
         <link href="css/plugins/jasny/jasny-bootstrap.min.css" rel="stylesheet">
         <link href="css/plugins/codemirror/codemirror.css" rel="stylesheet">
 
-
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
         <!-- ANARCHY styles -->
 
@@ -43,12 +43,12 @@
     <body onload="CargaInicial()">
 
         <!-- mensajitooooo alert o como se llame-->
-        <div id="mensaje" class="card text-white  mensaje" >	 
-            <div class="card-body box">	  	
+        <div id="mensaje" class="ibox text-white  mensaje" >	 
+            <div class="ibox-body box">	  	
                 <img id="mensaje-avatar" src="" class="mensaje-avatar" alt="avatar">
                 <div >
-                    <h5 id="mensaje-titulo" class="card-title">Mapeo completo</h5>
-                    <p id="mensaje-cuerpo" class="card-text">Fueron encontradas 5 entidades. Ahora puedes continuar con las configuraciones del proyecto.</p>
+                    <h5 id="mensaje-titulo" class="ibox-title">Mapeo completo</h5>
+                    <p id="mensaje-cuerpo" class="ibox-text">Fueron encontradas 5 entidades. Ahora puedes continuar con las configuraciones del proyecto.</p>
                 </div>
             </div>
         </div>
@@ -56,40 +56,40 @@
         <!-- -------- paneles o puertas -->
         <aside id="panelLateral-left" class="panelLateral">            
             <div class="panel-group" id="accordion">
-                <div class="card">
-                    <div class="card-body panel-title">
+                <div class="ibox">
+                    <div class="ibox-title panel-title">
                         <h4>
                             <a id="tabInicial"  data-toggle="collapse" data-parent="#accordion" href="#collapse1" >
                                 ¿Nuevo en Anarchy?</a>
                         </h4>
                     </div>
                     <div id="collapse1" class="panel-collapse collapse in">
-                        <div class="card-body ">                    
+                        <div class="ibox-content ">                    
                             <div class="flex">
-                                <img src="images/RichUncleSkeleton.png" class="card-avatar">
+                                <img src="images/RichUncleSkeleton.png" class="ibox-avatar">
                                 <div>
-                                    <h5 class="card-title">Arma tu modelo de datos</h5>
-                                    <p class="card-text ">
+                                    <h5 class="ibox-title">Arma tu modelo de datos</h5>
+                                    <p class="ibox-text ">
                                         Diseña tu base de datos y préstanos el SQL un instante para mapear las tablas y armar los objetos del proyecto. 
                                     </p>                            
                                 </div>
                             </div>
-                            <hr>
+
                             <div class="flex">                        
                                 <div class="align-der">
-                                    <h5 class="card-title">Dinos cómo quieres que esté hecho el proyecto</h5>
-                                    <p class="card-text ">
+                                    <h5 class="ibox-title">Dinos cómo quieres que esté hecho el proyecto</h5>
+                                    <p class="ibox-text ">
                                         Establece el lenguaje de programación, quién se encargará de manejar los datos, cómo quieres que se vea, entre otras opciones.
                                     </p>
                                 </div>
-                                <img src="images/gatoMistico.png" class="card-avatar">
+                                <img src="images/gatoMistico.png" class="ibox-avatar">
                             </div>
-                            <hr>
+
                             <div class="flex">
-                                <img src="images/Merlina.png" class="card-avatar">
+                                <img src="images/Merlina.png" class="ibox-avatar">
                                 <div>
-                                    <h5 class="card-title">Dinos cómo quieres que funcione</h5>
-                                    <p class="card-text ">
+                                    <h5 class="ibox-title">Dinos cómo quieres que funcione</h5>
+                                    <p class="ibox-text ">
                                         Entréganos una lista de requerimientos funcionales y ve a comer algo mientras nuestros esclavos los programan. Tendrás el código fuente listo para descargar en unos pocos segundos.
                                     </p>                            
                                 </div>
@@ -97,23 +97,23 @@
                         </div>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="card-body panel-title">
+                <div class="ibox">
+                    <div class="ibox-title panel-title">
                         <h4>
                             <a data-toggle="collapse" data-parent="#accordion" href="#collapse2" >
                                 Genial, ya generé el código ¿y ahora qué?</a>
                         </h4>
                     </div>
                     <div id="collapse2" class="panel-collapse collapse ">
-                        <div class="card-body">
-                            <p class="card-text ">
+                        <div class="ibox-content">
+                            <p class="ibox-text ">
                                 Hay 4 pequeñísimos pasos que debes realizar en tu código generado para que pueda funcionar:
                             </p>
-                            <h5 class="card-title">1. Propiedades de base de datos</h5>
-                            <h6 class="card-subtitle">back/dao/properties</h6>
+                            <h5 class="ibox-title">1. Propiedades de base de datos</h5>
+                            <h6 class="ibox-subtitle">back/dao/properties</h6>
                             <div class="flex">
-                                <img class="card-img" src="images/manual/properties.jpg">
-                                <p class="card-text ">
+                                <img class="ibox-img" src="images/manual/properties.jpg">
+                                <p class="ibox-text ">
                                     Este archivo es importante en extremo. En él deben colocarse los datos de acceso a cada base de datos que vaya a utilizar.
                                     <br>
                                     DB_NAME debe ser cambiado por (¡adivinaste!) el nombre de la base de datos. Recuerde que debe coincidir con el utilizado en el controlador (paso 2).
@@ -123,10 +123,10 @@
                                     username contendrá el nombre de acceso a la base de datos, y password (¡adivinas otra vez!) la contraseña para el mismo fin. 
                                 </p>
                             </div>                    
-                            <hr>
-                            <h5 class="card-title">2. Controlador global</h5>
-                            <h6 class="card-subtitle">back/facade/globalController</h6>
-                            <p class="card-text ">
+
+                            <h5 class="ibox-title">2. Controlador global</h5>
+                            <h6 class="ibox-subtitle">back/facade/globalController</h6>
+                            <p class="ibox-text ">
                                 Define nuevamente el nombre de la base de datos y el gestor de conexión a la misma en los campos <i> DEFAULT_DBNAME y DEFAULT_GESTOR</i>
                                 <br>
                                 Actualmente Anarchy soporta las constantes:
@@ -136,16 +136,16 @@
                                 <li>ORACLE_FACTORY</li>
                             </ul>
                             </p>
-                            <hr>
-                            <h5 class="card-title">3. Ruta del archivo properties</h5>
-                            <h6 class="card-subtitle">back/Dao/conexion</h6>
+
+                            <h5 class="ibox-title">3. Ruta del archivo properties</h5>
+                            <h6 class="ibox-subtitle">back/Dao/conexion</h6>
                             <strong>Sólo necesario para proyectos Java web.</strong>                    
-                            <p class="card-text ">
+                            <p class="ibox-text ">
                                 Define la ruta absoluta del archivo properties.ini (sí, el del primer paso) dentro del método <i>leerProperties()</i> para que pueda ser leido, ya que la ruta relativa puede fallar en tiempo de ejecución.
                             </p>
-                            <hr>
-                            <h5 class="card-title">4. Make Anarchy great again!</h5>                     
-                            <p class="card-text ">
+
+                            <h5 class="ibox-title">4. Make Anarchy great again!</h5>                     
+                            <p class="ibox-text ">
                                 Y así terminamos nuestro curso intensivo. ¿Difícil?
                                 <br>
                                 De ahora en adelante, cada bug será culpa tuya; a menos, claro, que nos dones cualquier dinerillo que te nazca del corazón para que sigamos creciendo. También, si quieres, puedes darnos tu alma.
@@ -168,11 +168,19 @@
         <aside id="panelLateral-right" class="panelLateral">
 
             <!--       ---------------------  BEGIN OF STARS ---------------------------           -->            
-            <div class="card widget-ratings">                        
-                <div class="card-body text-center">
-                    <h4 class="card-title">Cantidad de proyectos generados: <span id="numProyectos">12</span></h4> 
-                    <h4 class="card-title">Cantidad de lineas generadas: <span id="numLineas">12829634</span></h4> 
-                    <h4 class="card-title">Calificación promedio: <span id="calificacion"></span></h4>
+            <div class="ibox ">                
+                <div class="ibox-content ">
+                    <h4 >
+                        <i class="fas fa-project-diagram"></i>
+                        &nbsp Cantidad de proyectos generados: <span id="numProyectos">12</span>
+                    </h4> 
+                    <hr>
+                    <h4>
+                        <i class="fas fa-code"></i>
+                        &nbsp Cantidad de lineas generadas: <span id="numLineas">12829634</span>
+                    </h4> 
+                    <hr>
+                    <h4 >Calificación promedio: <span id="calificacion"></span></h4>
 
                     <div class="widget-ratings__star">
                         <i class="zmdi zmdi-star active"></i>
@@ -186,61 +194,12 @@
 
             <!--       ---------------------  END OF STARS ---------------------------           -->
             <!--       ---------------------  BEGIN OF COMMENTS ---------------------------           -->
-
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="card-title">Recent Posts</h4>
-                    <h6 class="card-subtitle">Venenatis portauam Inceptos ameteiam</h6>
+            <div class="ibox">
+                <div class="ibox-title">
+                    Comentarios
                 </div>
+                <div id="panel-comentarios" class="ibox-content"></div>
 
-                <div class="listview listview--hover">
-                    <a class="listview__item">
-                        <img src="demo/img/profile-pics/1.jpg" class="listview__img" alt="">
-
-                        <div class="listview__content">
-                            <div class="listview__heading">Jeannette Lawson</div>
-                            <p>Donec congue tempus ligula, varius hendrerit mi hendrerit sit amet. Duis ac quam sit amet leo feugiat iaculis</p>
-                        </div>
-                    </a>
-
-                    <a class="listview__item">
-                        <img src="demo/img/profile-pics/2.jpg" class="listview__img" alt="">
-
-                        <div class="listview__content">
-                            <div class="listview__heading">David Villa Jacobs</div>
-                            <p>Sorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam mattis lobortis sapien non posuere</p>
-                        </div>
-                    </a>
-
-                    <a class="listview__item">
-                        <img src="demo/img/profile-pics/3.jpg" class="listview__img" alt="">
-
-                        <div class="listview__content">
-                            <div class="listview__heading">Candice Barnes</div>
-                            <p>Quisque non tortor ultricies, posuere elit id, lacinia purus curabitur</p>
-                        </div>
-                    </a>
-
-                    <a class="listview__item">
-                        <img src="demo/img/profile-pics/4.jpg" class="listview__img" alt="">
-
-                        <div class="listview__content">
-                            <div class="listview__heading">Darla Mckinney</div>
-                            <p>Duis tincidunt augue nec sem dignissim scelerisque. Vestibulum rhoncus sapien sed nulla aliquam lacinia</p>
-                        </div>
-                    </a>
-
-                    <a class="listview__item">
-                        <img src="demo/img/profile-pics/5.jpg" class="listview__img" alt="">
-
-                        <div class="listview__content">
-                            <div class="listview__heading">Rudolph Perez</div>
-                            <p>Phasellus a ullamcorper lectus, sit amet viverra quam. In luctus tortor vel nulla pharetra bibendum</p>
-                        </div>
-                    </a>
-
-                    <a href="#" class="view-more">View All Posts</a>
-                </div>
             </div>
             <!--       ---------------------  END OF COMMENTS ---------------------------           -->                    
         </aside>    
