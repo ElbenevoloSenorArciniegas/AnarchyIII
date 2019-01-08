@@ -34,6 +34,54 @@ function postCargarDatos(result, state) {
     }
 }
 
+function preDescargar() {    
+    var reqs="";//manage
+    var formData={
+        leng:document.getElementById("leng").value,
+        sgbd:document.getElementById("gestores").value,
+        web:document.getElementById("web").value,
+        plantilla:document.getElementById("plantilla").value,
+        reqs:reqs
+    };
+    enviar(formData, "/Anarchyback/Descargar", postDescargar);
+}
+
+function postDescargar(result, state) {
+    
+}
+
+function preInsertComentario() {    
+    var formData={
+        msg:document.getElementById("comentarioMsg").value,
+        calificacion:document.getElementById("comentarioCalificacion").value
+    };
+    enviar(formData, "/Anarchyback/insertComentario", postInsertComentario);
+}
+
+function postInsertComentario(result, state) {
+//Maneje aquí la respuesta del servidor.
+    if (state == "success") {
+        var tipo="success";
+        if(result.tipo=="Fail"){
+            tipo="danger";
+        }
+        var msg = {            
+            tipo: tipo,
+            titulo: result.msg,
+            cuerpo: result.cuerpo,
+            avatar: "gatoMistico.png"
+        };
+    } else {
+        var msg = {
+            tipo: "danger",
+            titulo: "Lo sentimos, no dejes de querernos",
+            cuerpo: "El servidor se encuentra fuera de servicio en estos momentos.(u.u)",
+            avatar: "gatoMistico.png"
+        };
+        mostrarMensajito(msg);
+    }
+}
+
 var abiertoPLeft = false;
 var abiertoPRight = false;
 function cambiarBotonMedio(mostrar) {
