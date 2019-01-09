@@ -1,0 +1,10 @@
+/*
+El benévolo señor Arciiegas
+*/
+
+/* var declaring*/
+$fondo = rgba(255,255,255,0.9);
+
+.panel{
+    background-color: $fondo;
+}

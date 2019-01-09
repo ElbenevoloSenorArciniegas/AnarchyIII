@@ -166,7 +166,7 @@ function saludar(args){
 }
 
 function upload(args){
-	document.getElementById("inputSql").click();
+	document.getElementById("dropzoneForm").click();
 	limpiar();
 }
 

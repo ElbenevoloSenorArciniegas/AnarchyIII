@@ -1,86 +1,88 @@
 html body .barraLateral-left .barraLateral-right{
-	min-height: 100% !important;
+    min-height: 100% !important;
     height: 100% !important;
 }
+
 body{	
-	overflow-x: hidden;
-	background-image: url('images/fondo-min-min.jpg'); background-color: black; background-repeat: no-repeat; background-size: 100%;	
-	
+    font-weight: 600;
+    overflow-x: hidden;
+    background-image: url('images/fondo-min-min.jpg'); background-color: black; background-repeat: no-repeat; background-size: 100% 100%; 
+
 }
 .abrirPanelLateral{
-	width: 25px;
-	height: 100% ;	
-	position:fixed; 
-	top: 0px;
-	background-color: rgba(0,0,0,.4);		
-	z-index: 4;	
-	cursor: pointer;
+    width: 25px;
+    height: 100% ;	
+    position:fixed; 
+    top: 0px;
+    background-color: rgba(0,0,0,.4);		
+    z-index: 54;	
+    cursor: pointer;
 }
 .abrirPanelLateral-right{
-	right: 0px;	
+    right: 0px;	
 }
 
 .abrirPanelLateral > h4 > span{
-	background-color: rgba(0,0,0,.7); 	
-	width: inherit;
-	height: 50px;
-	line-height: 50px;
-	text-align: center; 
-	color: white;	
+    background-color: rgba(0,0,0,.7); 	
+    width: inherit;
+    height: 50px;
+    line-height: 50px;
+    text-align: center; 
+    color: white;	
 
-	margin: auto;
-	position: absolute;
-	top: 0; left: 0; bottom: 0; right: 0;
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
 }
 
 .abrirPanelLateral-left > h4 > span{
-	border-top-right-radius: 50%; 
-	border-bottom-right-radius: 50%; 	
+    border-top-right-radius: 50%; 
+    border-bottom-right-radius: 50%; 	
 }
 
 .abrirPanelLateral-right > h4 > span{	
-	border-top-left-radius: 50%; 
-	border-bottom-left-radius: 50%; 	
+    border-top-left-radius: 50%; 
+    border-bottom-left-radius: 50%; 	
 }
 
 .panelLateral{
-	background-color: #00000030;
-	z-index: 3;
+    background-color: #00000030;
+    z-index: 53;
 
-	position: absolute;
-	top: 0px;
+    position: absolute;
+    top: 0px;
 
-	width: 50%;
-	height: 100%;
+    width: 50%;
+    height: 100%;
 
-	padding: 25px;
-	padding-left: 50px;
-	padding-right: 50px;
+    padding: 25px;
+    padding-left: 50px;
+    padding-right: 50px;
 
-	overflow-y: scroll;
+    overflow-y: scroll;
 }
 
 #panelLateral-left{
-	background-image: radial-gradient(at right 50%, #fffd, #0003);	
-	border-right: 5px solid #001;	
-	
-	left: -50%;
+    background-image: radial-gradient(at right 50%, #fffd, #0003);	
+    border-right: 5px solid #001;	
 
-	-webkit-transition: left 3s;
-	-moz-transition: left 3s;
-	-o-transition: left 3s;
-  	transition: left 3s;
+    left: -50%;
+
+    -webkit-transition: left 3s;
+    -moz-transition: left 3s;
+    -o-transition: left 3s;
+    transition: left 3s;
 }
 #panelLateral-right{		
-	background-image: radial-gradient(at left 50%, #fffd, #0003);	
-	border-left: 5px solid #001;			
-	
-	right: -50%;
+    background-image: radial-gradient(at left 50%, #fffd, #0003);	
+    border-left: 5px solid #001;			
 
-	-webkit-transition: right 3s;
-	-moz-transition: right 3s;
-	-o-transition: right 3s;
-  	transition: right 3s;
+    right: -50%;
+
+    -webkit-transition: right 3s;
+    -moz-transition: right 3s;
+    -o-transition: right 3s;
+    transition: right 3s;
 }
 
 /*Esta maravilla quita las scrollbar XD*/
@@ -90,63 +92,79 @@ body{
 
 #botonMedio{
 
-	opacity: 0;
-	display: none;
+    opacity: 0;
+    display: none;
 
-	position: absolute;
-	width: 150px;
-	top: 50%;
-	left: 50%;		
-  	transform: translate(-50%, -50%);
-	z-index: 4;
-	background-color: white;
-	border-radius: 50%;	
-	cursor: pointer;
+    position: absolute;
+    width: 150px;
+    top: 50%;
+    left: 50%;		
+    transform: translate(-50%, -50%);
+    z-index: 54;
+    background-color: white;
+    border-radius: 50%;	
+    cursor: pointer;
 
-	-webkit-transition: width 1s, background-color 1s, opacity 1.5s;
-	-moz-transition: width 1s, background-color 1s, opacity 1.5s;
-	-o-transition: width 1s, background-color 1s, opacity 1.5s;
-  	transition: width 1s, background-color 1s, opacity 1.5s;
+    -webkit-transition: width 1s, background-color 1s, opacity 1.5s;
+    -moz-transition: width 1s, background-color 1s, opacity 1.5s;
+    -o-transition: width 1s, background-color 1s, opacity 1.5s;
+    transition: width 1s, background-color 1s, opacity 1.5s;
 }
 
 #botonMedio:hover{
-	background-color: #555566;
-	width: 160px;
+    background-color: #555566;
+    width: 160px;
 }
 
 #botonMedio > img{
-	border: 5px solid #001;	
-	border-radius: 50%;	
-	width: inherit;
-	padding: 5px;
+    border: 5px solid #001;	
+    border-radius: 50%;	
+    width: inherit;
+    padding: 5px;
 }
 
 
 
 .panel-group > .ibox {
-	margin-bottom: 0px;
-	max-height: 400px;
-	overflow-y: scroll;
+    margin-bottom: 0px;
+    max-height: 400px;
+    overflow-y: scroll;
 }
 
 
 .panel-title{
-	background-color: #dedede;
+    background-color: #333 !important;
+    color: white !important;
+    /*text-shadow: 0 -1px 4px #FFF, 0 -2px 10px #ff0, 0 -10px 20px #ff8000, 0 -18px 40px #F00, 3px -20px 10px rgba(0,30,255,0.54);*/
+    text-shadow: 0px -1px 2px grey, 0px -2px 2px orange, 0px -3px 2px red;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.active > .panel-title{
+    background-color: orange !important;
+    color: black !important;
+    text-shadow: 0px 0px 2px orange, 0px 0px 4px blue;
+}
+
+.panel-title  a{
+    color: white;
+    font-weight: 600;
 }
 
 .flex{
-	display: flex;
+    display: flex;
 }
 
 
 
 .ibox-avatar{
-	width: 125px;
-	height: 100%;
+    width: 125px;
+    height: 100%;
 }
 .ibox-img{
-	margin-right: 15px;
-	width: 100%;
+    margin-right: 15px;
+    width: 100%;
 }
 /*------------------------------  Esto es THEME.css del Anarchy II original ---------------------------*/
 .ui-tabs.ui-tabs-top > .ui-tabs-nav {
@@ -205,9 +223,13 @@ input.invalid {
 
 .fondo{
     color:black;
-    background: rgba(255,255,255,0.8);
+    background: rgba(255,255,255,0.9);
     text-align: center;
     padding: 3px;
+}
+
+.fondo > *{
+    background: inherit;
 }
 
 .mywizard{

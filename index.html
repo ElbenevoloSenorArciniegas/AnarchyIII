@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
-
-    <!-- Mirrored from webapplayers.com/inspinia_admin-v2.7.1/form_wizard.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 16 Nov 2017 03:04:47 GMT -->
     <head>
 
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <title>(x.x ) Anarchy ( x.x)</title>
+        <link rel="shortcut icon" type="image/png" href="images/icono.png"/>
 
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
@@ -30,6 +29,7 @@
         <link rel="stylesheet" type="text/css" href="ANARCHY.css">
         <link rel="stylesheet" type="text/css" href="css/mensaje.css">
         <link rel="stylesheet" type="text/css" href="css/consola.css">
+        <link rel="stylesheet" type="text/css" href="css/toggleButton.css">
         <script type="text/javascript" src="ANARCHY.js"></script>
         <script type="text/javascript" src="js/mensaje.js"></script>
         <script type="text/javascript" src="js/consola.js"></script>
@@ -42,13 +42,30 @@
     <!--<body >-->
     <body onload="CargaInicial()">
 
+        <!-- Consola de comandos -->	
+	<div id="consola" class="card consola">
+		<div class="consola-header">
+			Command
+		</div>
+	  <div class=" consola-body">  		
+  		<h4>>>&nbsp</h4>
+  		<h4 id="preCursor"></h4>
+  		<h4 id="cursor">_</h4>
+  		<h4 id="postCursor"></h4>
+	  </div>
+	</div>	
+	<script type="text/javascript" src="js/consola.js"></script>
+	<script type="text/javascript">
+		cosasRepetitivas();
+	</script>
+        
         <!-- mensajitooooo alert o como se llame-->
         <div id="mensaje" class="ibox text-white  mensaje" >	 
-            <div class="ibox-body box">	  	
+            <div class="ibox-content box">	  	
                 <img id="mensaje-avatar" src="" class="mensaje-avatar" alt="avatar">
                 <div >
-                    <h5 id="mensaje-titulo" class="ibox-title">Mapeo completo</h5>
-                    <p id="mensaje-cuerpo" class="ibox-text">Fueron encontradas 5 entidades. Ahora puedes continuar con las configuraciones del proyecto.</p>
+                    <h3 id="mensaje-titulo" class="mensaje-title">Mapeo completo</h3>
+                    <p id="mensaje-cuerpo" class="mensaje-text">Fueron encontradas 5 entidades. Ahora puedes continuar con las configuraciones del proyecto.</p>
                 </div>
             </div>
         </div>
@@ -57,9 +74,9 @@
         <aside id="panelLateral-left" class="panelLateral">            
             <div class="panel-group" id="accordion">
                 <div class="ibox">
-                    <div class="ibox-title panel-title">
+                    <div class="ibox-title panel-title" data-toggle="collapse" data-parent="#accordion" href="#collapse1">
                         <h4>
-                            <a id="tabInicial"  data-toggle="collapse" data-parent="#accordion" href="#collapse1" >
+                            <a    >
                                 ¿Nuevo en Anarchy?</a>
                         </h4>
                     </div>
@@ -68,7 +85,7 @@
                             <div class="flex">
                                 <img src="images/RichUncleSkeleton.png" class="ibox-avatar">
                                 <div>
-                                    <h5 class="ibox-title">Arma tu modelo de datos</h5>
+                                    <h3 class="ibox-title">Arma tu modelo de datos</h3>
                                     <p class="ibox-text ">
                                         Diseña tu base de datos y préstanos el SQL un instante para mapear las tablas y armar los objetos del proyecto. 
                                     </p>                            
@@ -77,7 +94,7 @@
 
                             <div class="flex">                        
                                 <div class="align-der">
-                                    <h5 class="ibox-title">Dinos cómo quieres que esté hecho el proyecto</h5>
+                                    <h3 class="ibox-title">Dinos cómo quieres que esté hecho el proyecto</h3>
                                     <p class="ibox-text ">
                                         Establece el lenguaje de programación, quién se encargará de manejar los datos, cómo quieres que se vea, entre otras opciones.
                                     </p>
@@ -88,7 +105,7 @@
                             <div class="flex">
                                 <img src="images/Merlina.png" class="ibox-avatar">
                                 <div>
-                                    <h5 class="ibox-title">Dinos cómo quieres que funcione</h5>
+                                    <h3 class="ibox-title">Dinos cómo quieres que funcione</h3>
                                     <p class="ibox-text ">
                                         Entréganos una lista de requerimientos funcionales y ve a comer algo mientras nuestros esclavos los programan. Tendrás el código fuente listo para descargar en unos pocos segundos.
                                     </p>                            
@@ -98,9 +115,9 @@
                     </div>
                 </div>
                 <div class="ibox">
-                    <div class="ibox-title panel-title">
+                    <div class="ibox-title panel-title" data-toggle="collapse" data-parent="#accordion" href="#collapse2">
                         <h4>
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse2" >
+                            <a>
                                 Genial, ya generé el código ¿y ahora qué?</a>
                         </h4>
                     </div>
@@ -109,8 +126,8 @@
                             <p class="ibox-text ">
                                 Hay 4 pequeñísimos pasos que debes realizar en tu código generado para que pueda funcionar:
                             </p>
-                            <h5 class="ibox-title">1. Propiedades de base de datos</h5>
-                            <h6 class="ibox-subtitle">back/dao/properties</h6>
+                            <h3 class="ibox-title">1. Propiedades de base de datos</h3>
+                            <h5 class="ibox-subtitle">back/dao/properties</h5>
                             <div class="flex">
                                 <img class="ibox-img" src="images/manual/properties.jpg">
                                 <p class="ibox-text ">
@@ -124,8 +141,8 @@
                                 </p>
                             </div>                    
 
-                            <h5 class="ibox-title">2. Controlador global</h5>
-                            <h6 class="ibox-subtitle">back/facade/globalController</h6>
+                            <h3 class="ibox-title">2. Controlador global</h3>
+                            <h5 class="ibox-subtitle">back/facade/globalController</h5>
                             <p class="ibox-text ">
                                 Define nuevamente el nombre de la base de datos y el gestor de conexión a la misma en los campos <i> DEFAULT_DBNAME y DEFAULT_GESTOR</i>
                                 <br>
@@ -137,28 +154,22 @@
                             </ul>
                             </p>
 
-                            <h5 class="ibox-title">3. Ruta del archivo properties</h5>
-                            <h6 class="ibox-subtitle">back/Dao/conexion</h6>
+                            <h3 class="ibox-title">3. Ruta del archivo properties</h3>
+                            <h5 class="ibox-subtitle">back/Dao/conexion</h5>
                             <strong>Sólo necesario para proyectos Java web.</strong>                    
                             <p class="ibox-text ">
                                 Define la ruta absoluta del archivo properties.ini (sí, el del primer paso) dentro del método <i>leerProperties()</i> para que pueda ser leido, ya que la ruta relativa puede fallar en tiempo de ejecución.
                             </p>
 
-                            <h5 class="ibox-title">4. Make Anarchy great again!</h5>                     
+                            <h3 class="ibox-title">4. Make Anarchy great again!</h3>
                             <p class="ibox-text ">
                                 Y así terminamos nuestro curso intensivo. ¿Difícil?
                                 <br>
-                                De ahora en adelante, cada bug será culpa tuya; a menos, claro, que nos dones cualquier dinerillo que te nazca del corazón para que sigamos creciendo. También, si quieres, puedes darnos tu alma.
                                 <br>
-                            <div style="text-align: center">
-                                \($ w $)/
+                                De ahora en adelante, cada bug será culpa tuya; a menos, claro, que nos dones cualquier dinerillo que te nazca del corazón para que sigamos creciendo.
                                 <br>
-                                Necesito un alma, cualquiera ¡La tuya! 
                                 <br>
-                                \($ w $)/
-                            </div>
-                            <br>
-                            Recuerda, nuestra meta es hacer a los programadores cada vez más vagos.                        
+                                Recuerda, nuestra meta es hacer a los programadores cada vez más vagos.                        
                             </p>
                         </div>
                     </div>
@@ -182,23 +193,16 @@
                     <hr>
                     <h4 >Calificación promedio: <span id="calificacion"></span></h4>
 
-                    <div class="widget-ratings__star">
-                        <i class="zmdi zmdi-star active"></i>
-                        <i class="zmdi zmdi-star active"></i>
-                        <i class="zmdi zmdi-star active"></i>
-                        <i class="zmdi zmdi-star active"></i>
-                        <i class="zmdi zmdi-star"></i>
-                    </div>                            
                 </div>
             </div>
 
             <!--       ---------------------  END OF STARS ---------------------------           -->
             <!--       ---------------------  BEGIN OF COMMENTS ---------------------------           -->
             <div class="ibox">
-                <div class="ibox-title">
-                    Comentarios
+                <div class="ibox-title panel-title">
+                    <i class="far fa-comment"></i> Últimos comentarios:
                 </div>
-                <div id="panel-comentarios" class="ibox-content"></div>
+                <div id="panel-comentarios" class="ibox-content" style="max-height: 400px; overflow-y: scroll"></div>
 
             </div>
             <!--       ---------------------  END OF COMMENTS ---------------------------           -->                    
@@ -219,50 +223,93 @@
 
                 <div style="width: 75%; margin: auto; margin-top: 15px">
                     <div >
-                        <img src="images/name2.png" style="display: block; margin: auto; width: 80%; height: 175px"/>
+                        <img src="images/name2.png" style="display: block; margin: auto; width: 65%; height: 125px"/>
                     </div>
                     <div class="borde fondo" id="frase" style="padding: 7px">
                         Esta es una cochina frase hecha a palito ( -w-)
                     </div>            
                     <div  class="fondo mywizard borde">
-
-                        <div >
-                            <div class="tabs-container">
-                                <ul class="nav nav-tabs" role="tablist">
-                                    <li><a class="nav-link active" data-toggle="tab" href="#tab-1">Base de datos</a></li>
-                                    <li><a class="nav-link" data-toggle="tab" href="#tab-2">Vista</a></li>
-                                </ul>
-                                <div class="tab-content">
-                                    <div role="tabpanel" id="tab-1" class="tab-pane active">
-                                        <div class="panel-body">
-                                            <div class="row">
-                                                <div class="col col-sm-12 col-md-6">
-                                                    <form action="/Anarchyback/cargar" class="dropzone" id="dropzoneForm">
-                                                        <div class="fallback">
-                                                            <input name="file" type="file" />
-                                                        </div>
-                                                    </form>  
-                                                </div>
-                                                <div class="col col-sm-12 col-md-6">
-                                                    Diseñar directamente la base de datos
-                                                </div>
-                                            </div>                                            
-                                        </div>
+                        <div class="tabs-container" style="min-height: 100%">
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li class="active">
+                                    <a class="nav-link panel-title" data-toggle="tab" href="#tab-1">
+                                        <i class="fas fa-database"></i>Base de datos
+                                    </a>
+                                </li>
+                                <li>
+                                    <a id="link-tab-2" class="nav-link panel-title" data-toggle="tab" href="#tab-2">
+                                        <!--
+                                        <i class="fas fa-laptop-code"></i>Vista
+                                        -->
+                                        <i class="fas fa-cogs"></i>Proyecto
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="nav-link panel-title" data-toggle="tab" href="#tab-3">
+                                        <i class="far fa-file-code"></i>Requerimientos
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="nav-link panel-title" data-toggle="tab" href="#tab-4">
+                                        <i class="fas fa-tasks"></i>y voilà
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="tab-content">
+                                <div role="tabpanel" id="tab-1" class="tab-pane active">
+                                    <div class="panel-body">
+                                        <div class="row">
+                                            <div class="col col-sm-12 col-md-6">
+                                                <form action="/Anarchyback/cargar" class="dropzone" id="dropzoneForm">
+                                                    <div class="fallback">
+                                                        <input name="file" type="file" />
+                                                    </div>
+                                                </form>  
+                                            </div>
+                                            <div class="col col-sm-12 col-md-6">
+                                                Diseñar directamente la base de datos
+                                            </div>
+                                        </div>                                            
                                     </div>
-                                    <div role="tabpanel" id="tab-2" class="tab-pane">
-                                        <div class="panel-body">
-                                            <strong>Donec quam felis</strong>
+                                </div>                                
+                                <div role="tabpanel" id="tab-2" class="tab-pane">
+                                    <div class="panel-body row" >
+                                        <div class="col-xs-12 col-md-6">
+                                            MySql
+                                            <label class="switch">
+                                                <input id="gestorMYSQL" type="checkbox" >
+                                                <span class="slider round"></span>
+                                            </label>
+                                            PostgreSql
+                                            <label class="switch">
+                                                <input id="gestorPOSTGRESQL" type="checkbox" >
+                                                <span class="slider round"></span>
+                                            </label>
+                                            Oracle
+                                            <label class="switch">
+                                                <input id="gestorORACLE" type="checkbox" >
+                                                <span class="slider round"></span>
+                                            </label>
+                                        </div>
+                                        <div class="col-xs-12 col-md-6">
 
-                                            <p>Thousand unknown plants are noticed by me: when I hear the buzz of the little world among the stalks, and grow familiar with the countless indescribable forms of the insects
-                                                and flies, then I feel the presence of the Almighty, who formed us in his own image, and the breath </p>
-
-                                            <p>I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite
-                                                sense of mere tranquil existence, that I neglect my talents. I should be incapable of drawing a single stroke at the present moment; and yet.</p>
                                         </div>
                                     </div>
                                 </div>
+                                <div role="tabpanel" id="tab-3" class="tab-pane">
+                                    <div class="panel-body row" >
+                                        <div class="col-xs-12 col-md-6">
 
+                                        </div>
+                                        <div class="col-xs-12 col-md-6">
 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div role="tabpanel" id="tab-4" class="tab-pane">
+                                    <div class="panel-body" >                                        
+                                    </div>
+                                </div>
                             </div>
                         </div>                        
                     </div>
@@ -298,93 +345,13 @@
 
         <!-- DROPZONE -->
         <script src="js/plugins/dropzone/dropzone.js"></script>
+        <script src="js/dropzone.js"></script>
 
         <!-- CodeMirror -->
         <script src="js/plugins/codemirror/codemirror.js"></script>
         <script src="js/plugins/codemirror/mode/xml/xml.js"></script>
 
-        <script>
-            Dropzone.options.dropzoneForm = {
-                dictDefaultMessage: "<h1><i class='fa fa-upload'></i></h1><br><strong>Sube tu SQL o CHY</strong></br>",
-                paramName: "file", // The name that will be used to transfer the file
-                maxFilesize: 2, // MB
-                acceptedFiles: ".sql,.chy",
-                maxFiles: 1,
-                init: function () {
-                    this.on("maxfilesexceeded", function (file) {
-                        alert("No more files please!");
-                    });
-                },
-                sending: function () {
-                    var msg = {
-                        tipo: "info",
-                        titulo: "Subiendo",
-                        cuerpo: "Espera mientras el servidor hace su magia",
-                        avatar: "gatoMistico.png"
-                    };
-                    mostrarMensajito(msg);
-                },
-                success: function (file, response) {
-                    //alert(response);
-                    var json = JSON.parse(response);
-                    var tipo = "dark";
-                    var titulo = json.msg;
-                    var cuerpo = "";
-                    switch (json.tipo) {
-                        case "Success":
-                        {
-                            tipo = "success";
-                            //manage beans y attbs
-                            cuerpo = "Fueron encontradas "
-                                    + json.cuerpo.length
-                                    + " entidades. Ahora puedes continuar con las configuraciones del proyecto.";
-                            break;
-                        }
-                        case "Error":
-                        {
-                            tipo = "warning";
-                            cuerpo = json.cuerpo;
-                            break;
-                        }
-                        case "Fail":
-                        {
-                            tipo = "danger";
-                            cuerpo = json.cuerpo;
-                            break;
-                        }
-                    }
-                    var msg = {
-                        tipo: tipo,
-                        titulo: titulo,
-                        cuerpo: cuerpo,
-                        avatar: "gatoMistico.png"
-                    };
-                    mostrarMensajito(msg);
-                }
-            };
-
-            /*$(document).ready(function () {
-             
-             var editor_one = CodeMirror.fromTextArea(document.getElementById("code1"), {
-             lineNumbers: true,
-             matchBrackets: true
-             });
-             
-             var editor_two = CodeMirror.fromTextArea(document.getElementById("code2"), {
-             lineNumbers: true,
-             matchBrackets: true
-             });
-             
-             var editor_two = CodeMirror.fromTextArea(document.getElementById("code3"), {
-             lineNumbers: true,
-             matchBrackets: true
-             });
-             
-             });*/
-        </script>
-
     </body>
 
 
-    <!-- Mirrored from webapplayers.com/inspinia_admin-v2.7.1/form_wizard.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 16 Nov 2017 03:04:48 GMT -->
 </html>

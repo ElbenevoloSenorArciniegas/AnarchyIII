@@ -6,16 +6,20 @@
 	font-style: normal;
 	font-variant: normal;
 	font-weight: 700;
-	line-height: 20px;
-	
-	margin:auto;
+	line-height: 20px;	        
+        
+        position: fixed;
+        left: 33%;
+        min-width: 33%;
 	max-width: 33%;
+        
+	margin:auto;               
 	margin-top: -150px;
 
 	border-radius: 5px;
 	border: 5px ridge darkgray;
 
-	z-index: 4;	
+	z-index: 40;	
 
 	-webkit-transition: margin 2s;
 	-moz-transition: margin 2s;

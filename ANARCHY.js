@@ -1,20 +1,19 @@
 function CargaInicial() {
-    abrirPanelesLaterales();
-    document.getElementById("tabInicial").click();
+    abrirPanelesLaterales();    
     preCargarDatos();
 }
 
 function pintarEstrellas(calif) {
-    var estrellas = "<span>"+calif+"</span> &nbsp";
+    var estrellas = "<span>"+parseFloat(calif).toFixed(1)+"</span> &nbsp";
     for (var j = 0; j < 5; j++) {
         style = 'color: black';
         if (calif >= 1) {
             style = 'color: orange';
         } else if (calif > 0.5) {
-            style = 'color: orange';
+            style = 'color: orange'; //Quería pintar el % adecuado, pero ni idea :'(
         }
         calif -= 1;
-        estrellas += "<span style='" + style + "'>&#9733</span>";
+        estrellas += "<span style='" + style + "'>&#9733</span>"; 
     }
     return estrellas;
 }

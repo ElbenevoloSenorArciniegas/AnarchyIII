@@ -3908,6 +3908,7 @@ code {
   margin-bottom: 25px;
   margin-top: 0;
   padding: 0;
+  background-color: rgba(255,255,255,0.95);
 }
 .ibox.collapsed .ibox-content {
   display: none;
@@ -3927,18 +3928,18 @@ code {
   -moz-border-left-colors: none;
   -moz-border-right-colors: none;
   -moz-border-top-colors: none;
-  background-color: #ffffff;
-  border-color: #e7eaec;
+  background-color: inherit;
+  /*border-color: #e7eaec;*/
   border-image: none;
   border-style: solid solid none;
   border-width: 2px 0 0;
   color: inherit;
   margin-bottom: 0;
   padding: 15px 15px 7px;
-  min-height: 48px;
+  /*min-height: 48px;*/
 }
 .ibox-content {
-  background-color: #ffffff;
+  background-color: inherit;
   color: inherit;
   padding: 15px 20px 20px 20px;
   border-color: #e7eaec;
