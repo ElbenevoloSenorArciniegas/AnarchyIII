@@ -1,5 +1,5 @@
 Dropzone.options.dropzoneForm = {
-    dictDefaultMessage: "<h1><i class='fa fa-upload'></i></h1><br><strong>Sube tu SQL o CHY</strong></br>",
+    dictDefaultMessage: "<h1><i class='fa fa-upload'></i></h1><br><strong>Sube tu modelo de datos</strong></br>",
     paramName: "file", // The name that will be used to transfer the file
     maxFilesize: 2, // MB
     acceptedFiles: ".sql,.chy",

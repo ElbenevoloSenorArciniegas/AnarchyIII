@@ -223,13 +223,14 @@ input.invalid {
 
 .fondo{
     color:black;
-    background: rgba(255,255,255,0.9);
+    /*background: rgba(255,255,255,1);*/
+    background-color: #eee;
     text-align: center;
     padding: 3px;
 }
 
 .fondo > *{
-    background: inherit;
+    background: inherit !important;
 }
 
 .mywizard{

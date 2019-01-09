@@ -2886,8 +2886,9 @@ a.forum-item-title:hover {
 }
 /* Tabs */
 .tabs-container .panel-body {
-  background: #fff;
-  border: 1px solid #e7eaec;
+  /*background: #fff;*/
+  background-color: inherit;
+  /*border-top: 1px solid #333;*/
   border-radius: 2px;
   padding: 20px;
   position: relative;
@@ -2916,7 +2917,7 @@ a.forum-item-title:hover {
   border-bottom: 1px solid #e7eaec;
 }
 .tabs-container .tab-pane .panel-body {
-  border-top: none;
+  border-top: 2px solid #aaa;
 }
 .tabs-container .tabs-left .tab-pane .panel-body,
 .tabs-container .tabs-right .tab-pane .panel-body {

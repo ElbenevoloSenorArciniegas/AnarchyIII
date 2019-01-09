@@ -43,22 +43,22 @@
     <body onload="CargaInicial()">
 
         <!-- Consola de comandos -->	
-	<div id="consola" class="card consola">
-		<div class="consola-header">
-			Command
-		</div>
-	  <div class=" consola-body">  		
-  		<h4>>>&nbsp</h4>
-  		<h4 id="preCursor"></h4>
-  		<h4 id="cursor">_</h4>
-  		<h4 id="postCursor"></h4>
-	  </div>
-	</div>	
-	<script type="text/javascript" src="js/consola.js"></script>
-	<script type="text/javascript">
-		cosasRepetitivas();
-	</script>
-        
+        <div id="consola" class="card consola">
+            <div class="consola-header">
+                Command
+            </div>
+            <div class=" consola-body">  		
+                <h4>>>&nbsp</h4>
+                <h4 id="preCursor"></h4>
+                <h4 id="cursor">_</h4>
+                <h4 id="postCursor"></h4>
+            </div>
+        </div>	
+        <script type="text/javascript" src="js/consola.js"></script>
+        <script type="text/javascript">
+        cosasRepetitivas();
+        </script>
+
         <!-- mensajitooooo alert o como se llame-->
         <div id="mensaje" class="ibox text-white  mensaje" >	 
             <div class="ibox-content box">	  	
@@ -267,7 +267,17 @@
                                                 </form>  
                                             </div>
                                             <div class="col col-sm-12 col-md-6">
-                                                Diseñar directamente la base de datos
+                                                <p>
+                                                    Sube la estructura de tu base de datos en un archivo <b><i>.sql</i></b> que contenga 
+                                                    todos los DDL, o si prefieres, modifica un proyecto que ya hayas descargado
+                                                    a partir del archivo <b><i>.chy</i></b> del mismo.                                                    
+                                                </p>
+                                                <hr>
+                                                <p>
+                                                    Pronto tendremos una herramienta que te permita modelar tu base de datos 
+                                                    directamente desde aquí.
+                                                </p>
+                                                <a class="btn btn-white btn-rounded disabled" href="#">Diseña tu base de datos</a>
                                             </div>
                                         </div>                                            
                                     </div>
@@ -275,21 +285,47 @@
                                 <div role="tabpanel" id="tab-2" class="tab-pane">
                                     <div class="panel-body row" >
                                         <div class="col-xs-12 col-md-6">
-                                            MySql
-                                            <label class="switch">
-                                                <input id="gestorMYSQL" type="checkbox" >
-                                                <span class="slider round"></span>
-                                            </label>
-                                            PostgreSql
-                                            <label class="switch">
-                                                <input id="gestorPOSTGRESQL" type="checkbox" >
-                                                <span class="slider round"></span>
-                                            </label>
-                                            Oracle
-                                            <label class="switch">
-                                                <input id="gestorORACLE" type="checkbox" >
-                                                <span class="slider round"></span>
-                                            </label>
+                                            <div class="ibox-title">
+                                                <h3>
+                                                    <i class="fas fa-laptop-code"></i>
+                                                    ¿Qué lenguaje usarás?
+                                                </h3>
+                                            </div>
+                                            <div class="ibox-content">
+                                                Java
+                                                <label class="switch">
+                                                    <input id="lengJAVA" type="radio" name="leng" onclick="console.log('holi')">
+                                                    <span class="slider round"></span>
+                                                </label>
+                                                Php
+                                                <label class="switch">
+                                                    <input id="lengPHP" name="leng" type="radio" >
+                                                    <span class="slider round"></span>
+                                                </label>                                            
+                                            </div>
+                                            <div class="ibox-title">
+                                                <h3>
+                                                    <i class="fas fa-hdd"></i>
+                                                    ¿Qué gestores de BD deseas implementar?
+                                                </h3>
+                                            </div>
+                                            <div class="ibox-content">
+                                                MySql
+                                                <label class="switch">
+                                                    <input id="gestorMYSQL" type="checkbox" >
+                                                    <span class="slider round"></span>
+                                                </label>
+                                                PostgreSql
+                                                <label class="switch">
+                                                    <input id="gestorPOSTGRESQL" type="checkbox" >
+                                                    <span class="slider round"></span>
+                                                </label>
+                                                Oracle
+                                                <label class="switch">
+                                                    <input id="gestorORACLE" type="checkbox" >
+                                                    <span class="slider round"></span>
+                                                </label>
+                                            </div>
                                         </div>
                                         <div class="col-xs-12 col-md-6">
 
