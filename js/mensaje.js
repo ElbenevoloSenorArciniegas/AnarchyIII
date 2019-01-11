@@ -41,9 +41,11 @@ function mostrarMensajito(json) {
 	}
 	mensaje.style.backgroundColor=color;
 	mensaje.style.opacity=1;
+        document.getElementById("mensaje").style.right="20px";
 	setTimeout(ocultarMensajito,5000);
 }
 
 function ocultarMensajito() {
 	document.getElementById("mensaje").style.opacity=0;
+        setTimeout(document.getElementById("mensaje").style.right="133%",2000);
 }
