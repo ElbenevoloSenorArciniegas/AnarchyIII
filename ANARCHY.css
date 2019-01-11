@@ -166,6 +166,14 @@ body{
     margin-right: 15px;
     width: 100%;
 }
+
+div.disabled{
+    /*cursor: not-allowed;*/
+    /*background-color: #ddd9;*/
+}
+div.disabled > *{
+    cursor: not-allowed;
+}
 /*------------------------------  Esto es THEME.css del Anarchy II original ---------------------------*/
 .ui-tabs.ui-tabs-top > .ui-tabs-nav {
     background-color: #FFA600;
@@ -234,7 +242,7 @@ input.invalid {
 }
 
 .mywizard{
-    height: 350px;
+    height: 450px;
     overflow-y: scroll;
 }
 

@@ -1,10 +1,10 @@
 function CargaInicial() {
-    abrirPanelesLaterales();    
+//    abrirPanelesLaterales();
     preCargarDatos();
 }
 
 function pintarEstrellas(calif) {
-    var estrellas = "<span>"+parseFloat(calif).toFixed(1)+"</span> &nbsp";
+    var estrellas = "<span>" + parseFloat(calif).toFixed(1) + "</span> &nbsp";
     for (var j = 0; j < 5; j++) {
         style = 'color: black';
         if (calif >= 1) {
@@ -13,7 +13,7 @@ function pintarEstrellas(calif) {
             style = 'color: orange'; //Quería pintar el % adecuado, pero ni idea :'(
         }
         calif -= 1;
-        estrellas += "<span style='" + style + "'>&#9733</span>"; 
+        estrellas += "<span style='" + style + "'>&#9733</span>";
     }
     return estrellas;
 }
@@ -24,7 +24,7 @@ function preCargarDatos() {
 
 function postCargarDatos(result, state) {
 //Maneje aquí la respuesta del servidor.
-    if (state == "success") {        
+    if (state == "success") {
         var json = JSON.parse(result);
         document.getElementById("frase").innerHTML = json.frase;
         document.getElementById("calificacion").innerHTML = pintarEstrellas(json.calificacion);
@@ -49,8 +49,8 @@ function postCargarDatos(result, state) {
                     + "</div>"
                     + "</div>";
         }
-        if(com==""){
-            com="Aún no hemos recibido comentarios sobre Anarchy. Sé el primero cuando descargues tu proyecto."
+        if (com == "") {
+            com = "Aún no hemos recibido comentarios sobre Anarchy. Sé el primero cuando descargues tu proyecto."
         }
         document.getElementById("panel-comentarios").innerHTML = com;
     } else {
@@ -182,4 +182,49 @@ function abrirPanelLateral(left) {
     if (abiertoPRight && abiertoPLeft) {
         cambiarBotonMedio(true);
     }
+}
+
+function cambiarWeb() {
+    var isWeb = document.getElementById("isWeb").checked;
+    if (isWeb) {
+        $("#webOptions").removeClass('disabled');
+    } else {
+        $("#webOptions").addClass('disabled');
+    }
+    $("#webOptions :input").attr("disabled", !isWeb);
+}
+
+function cambiarPlantilla() {
+    var desc = "";
+    var img = "";
+    
+    var selector = document.getElementById('plantilla');
+    var value = selector[selector.selectedIndex].value;
+    
+    switch (value) {
+        case "0":
+        {
+            desc = "<h4><b>Blank</b></h4>"
+                    + "<p>Una plantilla en blanco ansiosa por ser editada</p>";
+            img = "Blank";
+            break;
+        }
+        case "2":
+        {
+            desc = "<h4><b>Simple</b></h4>"
+                    + "<p>Un menú y amplio espacio para desplegar información</p>";
+            img = "Simple";            
+            break;
+        }
+        case "1":
+        {
+            desc = "<h4><b>Doble</b></h4>"
+                    + "<p>Es como la simple, ¡pero doble!</p>";
+            img = "Doble";
+            break;
+        }
+
+    }
+    document.getElementById("descPlantilla").innerHTML = desc;
+    document.getElementById("imgPlantilla").src = "images/plantillas/" + img + ".png";    
 }
