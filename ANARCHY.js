@@ -65,19 +65,29 @@ function postCargarDatos(result, state) {
 }
 
 function preDescargar() {
-    var reqs = ""; //manage
-    var formData = {
-        leng: document.getElementById("leng").value,
-        sgbd: document.getElementById("gestores").value,
-        web: document.getElementById("web").value,
-        plantilla: document.getElementById("plantilla").value,
-        reqs: reqs
+//    console.log(projectData);
+    var msg = {
+        tipo: "info",
+        titulo: "Subiendo",
+        cuerpo: "Espera unos segundos a que nuestros esclavos terminen de escribir tu código",
+        avatar: "gatoMistico.png"
     };
-    enviar(formData, "/Anarchyback/Descargar", postDescargar);
+    mostrarMensajito(msg);
+    enviar(projectData, "/Anarchyback/Descargar", postDescargar);
 }
 
 function postDescargar(result, state) {
+    if (state == "success") {
 
+    } else {
+        var msg = {
+            tipo: "danger",
+            titulo: "Lo sentimos",
+            cuerpo: "El servidor no ha podido completar la solicitud<br>"+result,
+            avatar: "gatoMistico.png"
+        };
+        mostrarMensajito(msg);
+    }
 }
 
 function preInsertComentario() {
@@ -184,47 +194,3 @@ function abrirPanelLateral(left) {
     }
 }
 
-function cambiarWeb() {
-    var isWeb = document.getElementById("isWeb").checked;
-    if (isWeb) {
-        $("#webOptions").removeClass('disabled');
-    } else {
-        $("#webOptions").addClass('disabled');
-    }
-    $("#webOptions :input").attr("disabled", !isWeb);
-}
-
-function cambiarPlantilla() {
-    var desc = "";
-    var img = "";
-    
-    var selector = document.getElementById('plantilla');
-    var value = selector[selector.selectedIndex].value;
-    
-    switch (value) {
-        case "0":
-        {
-            desc = "<h4><b>Blank</b></h4>"
-                    + "<p>Una plantilla en blanco ansiosa por ser editada</p>";
-            img = "Blank";
-            break;
-        }
-        case "2":
-        {
-            desc = "<h4><b>Simple</b></h4>"
-                    + "<p>Un menú y amplio espacio para desplegar información</p>";
-            img = "Simple";            
-            break;
-        }
-        case "1":
-        {
-            desc = "<h4><b>Doble</b></h4>"
-                    + "<p>Es como la simple, ¡pero doble!</p>";
-            img = "Doble";
-            break;
-        }
-
-    }
-    document.getElementById("descPlantilla").innerHTML = desc;
-    document.getElementById("imgPlantilla").src = "images/plantillas/" + img + ".png";    
-}

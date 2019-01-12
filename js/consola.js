@@ -20,39 +20,40 @@ function cambiarColorCursor() {
 
 window.onkeyup = function (e) {
     var code = e.keyCode ? e.keyCode : e.which;
-
-    if (estaAbierta) {
-        temporizadorCerrarConsola = 5000;
-        if (code == 13) { //enter
-            runCommand();
-        } else if (code == 27) { //escape
-            cerrarConsola();
-        } else if (code == 8) { //backspace
-            deleteChar(true);
-        } else if (code == 46) { //delete
-            deleteChar(false);
-        } else if (code == 37) { //leftArrow
-            moverCursor(true);
-        } else if (code == 39) { //RigthArrow
-            moverCursor(false);
-        } else if (code == 32) { //space
-            validarEspacio();
-        } else if ((code >= 65 && code <= 90) || (code >= 48 && code <= 57)) { //alphaNumerics
-            getTeclaPulsada(e.key);
-        }
-    } else {
-        temporizadorCerrarConsola = 5000;
-        if (code == 13) { //enter
-            abrirConsola();
-        } else if ((code >= 65 && code <= 90) || (code >= 48 && code <= 57)) { //alphaNumerics
-            abrirConsola();
-            getTeclaPulsada(e.key);
-        } else if (code == 32) { //space
-            abrirConsola();
-            validarEspacio();
+    if (!(document.activeElement.tagName === "TEXTAREA")) { //problema con la text de comentarios
+        if (estaAbierta) {
+            temporizadorCerrarConsola = 5000;
+            if (code == 13) { //enter
+                runCommand();
+            } else if (code == 27) { //escape
+                cerrarConsola();
+            } else if (code == 8) { //backspace
+                deleteChar(true);
+            } else if (code == 46) { //delete
+                deleteChar(false);
+            } else if (code == 37) { //leftArrow
+                moverCursor(true);
+            } else if (code == 39) { //RigthArrow
+                moverCursor(false);
+            } else if (code == 32) { //space
+                validarEspacio();
+            } else if ((code >= 65 && code <= 90) || (code >= 48 && code <= 57)) { //alphaNumerics
+                getTeclaPulsada(e.key);
+            }
+        } else {
+            temporizadorCerrarConsola = 5000;
+            if (code == 13) { //enter
+                abrirConsola();
+            } else if ((code >= 65 && code <= 90) || (code >= 48 && code <= 57)) { //alphaNumerics
+                abrirConsola();
+                getTeclaPulsada(e.key);
+            } else if (code == 32) { //space
+                abrirConsola();
+                validarEspacio();
+            }
         }
     }
-}
+};
 
 function abrirConsola() {
     document.getElementById("consola").style.marginTop = "20px";
@@ -145,6 +146,11 @@ function runCommand() {
             web(args);
             break;
         }
+        case "download":
+        {
+            download(args);
+            break;
+        }
         default:
         {
             mostrarMensaje("Lo sentimos, el comando no es válido.");
@@ -224,7 +230,7 @@ function selectLenguaje(args) {
                 }
             }
             var checkbox = document.getElementById("leng" + arg);
-            checkbox.checked = !checkbox.checked;
+            checkbox.click();
         }
         limpiar();
     }
@@ -263,7 +269,7 @@ function selectGestores(args) {
                 }
             }
             var checkbox = document.getElementById("gestor" + arg);
-            checkbox.checked = !checkbox.checked;
+            checkbox.click();
         }
         //mostrarMensaje("");
         limpiar();
@@ -273,7 +279,7 @@ function web(args) {
     if (args.length == 0) {
         document.getElementById("isWeb").click();
     } else {
-        document.getElementById("isWeb").checked=true;
+        document.getElementById("isWeb").checked = true;
         var arg = args[0].toUpperCase();
         var n = 0;
         switch (arg) {
@@ -300,5 +306,9 @@ function web(args) {
         document.getElementById("plantilla").selectedIndex = n; //index is not the value
         cambiarPlantilla();
     }
+    limpiar();
+}
+function download() {
+    preDescargar();
     limpiar();
 }

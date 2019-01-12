@@ -34,6 +34,7 @@
         <script type="text/javascript" src="js/mensaje.js"></script>
         <script type="text/javascript" src="js/consola.js"></script>
         <script type="text/javascript" src="js/Ajax.js"></script>
+        <script type="text/javascript" src="js/projectData.js"></script>
 
 
 
@@ -294,12 +295,12 @@
                                             <div class="ibox-content">
                                                 Java
                                                 <label class="switch">
-                                                    <input id="lengJAVA" type="radio" name="leng" onclick="console.log('holi')">
+                                                    <input id="lengJAVA" type="radio" name="leng" onclick="cambiarLeng('JAVA')">
                                                     <span class="slider round"></span>
                                                 </label>
                                                 Php
                                                 <label class="switch">
-                                                    <input id="lengPHP" name="leng" type="radio" >
+                                                    <input id="lengPHP" name="leng" type="radio" onclick="cambiarLeng('PHP')">
                                                     <span class="slider round"></span>
                                                 </label>                                            
                                             </div>
@@ -312,17 +313,17 @@
                                             <div class="ibox-content" >
                                                 MySql
                                                 <label class="switch">
-                                                    <input id="gestorMYSQL" type="checkbox" >
+                                                    <input id="gestorMYSQL" type="checkbox" onclick="cambiarGestor('MYSQL')" >
                                                     <span class="slider round"></span>
                                                 </label>
                                                 PostgreSql
                                                 <label class="switch">
-                                                    <input id="gestorPOSTGRESQL" type="checkbox" >
+                                                    <input id="gestorPOSTGRESQL" type="checkbox" onclick="cambiarGestor('POSTGRESQL')">
                                                     <span class="slider round"></span>
                                                 </label>
                                                 Oracle
                                                 <label class="switch">
-                                                    <input id="gestorORACLE" type="checkbox" >
+                                                    <input id="gestorORACLE" type="checkbox" onclick="cambiarGestor('ORACLE')">
                                                     <span class="slider round"></span>
                                                 </label>
                                             </div>
@@ -362,23 +363,26 @@
                                 </div>
                                 <div role="tabpanel" id="tab-4" class="tab-pane">
                                     <div class="panel-body row" >
-                                        <div class="col-xs-12 col-md-6">
-                                            <div style="align-content: center">
+                                        <div class="col-xs-12 col-md-6" >
+                                            <div class="ibox-content" id="panelDescargar" onclick="preDescargar()">
                                                 <h1> 
                                                     <br>
                                                     <span class="glyphicon glyphicon-cloud-download"></span>
                                                 </h1>
-                                                <h4>Terminemos con esto</h4>
-                                                <div style="margin: auto; padding: 15px;">
-                                                    <button class="" onclick="" style="width: 50%" role="button" aria-disabled="false">
-                                                        <span>\( x.x )/</span>
-                                                    </button>
-                                                </div>
+                                                <h3>Terminemos con esto</h3>
+                                                <h1> 
+                                                    <br>                                                    
+                                                </h1>
                                             </div>
                                         </div>
                                         <div class="col-xs-12 col-md-6">
-
-                                        </div>
+                                            <div class="ibox-title">
+                                                <h3>¿Qué tal te ha parecido el viaje?</h3>
+                                            </div>
+                                            <div class="ibox-content">                                                
+                                                <textarea placeholder="Remember, be nice!" rows="6" style="width: 100%"></textarea>
+                                            </div>
+                                        </div>                                        
                                     </div>
                                 </div>
                             </div>
