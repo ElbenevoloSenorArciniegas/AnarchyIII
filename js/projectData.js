@@ -1,9 +1,9 @@
 var projectData = {
-    leng: "",
-    sgbd: [],
+    leng: "JAVA",
+    sgbd: ["MYSQL"],
     web: "true",
     plantilla: "0",
-    reqs: []
+    reqs: []    
 };
 
 function cambiarLeng(leng){
@@ -65,5 +65,5 @@ function cambiarPlantilla() {
 
     }
     document.getElementById("descPlantilla").innerHTML = desc;
-    document.getElementById("imgPlantilla").src = "images/plantillas/" + img + ".png";    
+    document.getElementById("imgPlantilla").src = "images/plantillas/" + img + ".png";
 }

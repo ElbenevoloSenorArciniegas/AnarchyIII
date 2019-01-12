@@ -22,7 +22,7 @@
         <link href="css/plugins/jasny/jasny-bootstrap.min.css" rel="stylesheet">
         <link href="css/plugins/codemirror/codemirror.css" rel="stylesheet">
 
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">        
 
         <!-- ANARCHY styles -->
 
@@ -35,6 +35,7 @@
         <script type="text/javascript" src="js/consola.js"></script>
         <script type="text/javascript" src="js/Ajax.js"></script>
         <script type="text/javascript" src="js/projectData.js"></script>
+        <script type="text/javascript" src="js/comentarios.js"></script>
 
 
 
@@ -77,7 +78,7 @@
                 <div class="ibox">
                     <div class="ibox-title panel-title" data-toggle="collapse" data-parent="#accordion" href="#collapse1">
                         <h4>
-                            <a    >
+                            <a>
                                 ¿Nuevo en Anarchy?</a>
                         </h4>
                     </div>
@@ -148,12 +149,12 @@
                                 Define nuevamente el nombre de la base de datos y el gestor de conexión a la misma en los campos <i> DEFAULT_DBNAME y DEFAULT_GESTOR</i>
                                 <br>
                                 Actualmente Anarchy soporta las constantes:
-                            <ul>
+                            </p><ul>
                                 <li>MYSQL_FACTORY</li>
                                 <li>POSTGRESQL_FACTORY</li>
                                 <li>ORACLE_FACTORY</li>
                             </ul>
-                            </p>
+                            <p></p>
 
                             <h3 class="ibox-title">3. Ruta del archivo properties</h3>
                             <h5 class="ibox-subtitle">back/Dao/conexion</h5>
@@ -175,7 +176,7 @@
                         </div>
                     </div>
                 </div>
-            </div>                
+            </div>
         </aside>        
         <aside id="panelLateral-right" class="panelLateral">
 
@@ -227,7 +228,7 @@
                         <img src="images/name2.png" style="display: block; margin: auto; width: 65%; height: 125px"/>
                     </div>
                     <div class="borde fondo" id="frase" style="padding: 7px">
-                        Esta es una cochina frase hecha a palito ( -w-)
+                        Error 404: Frase no encontrada
                     </div>            
                     <div  class="fondo mywizard borde">
                         <div class="tabs-container" style="min-height: 100%">
@@ -295,7 +296,7 @@
                                             <div class="ibox-content">
                                                 Java
                                                 <label class="switch">
-                                                    <input id="lengJAVA" type="radio" name="leng" onclick="cambiarLeng('JAVA')">
+                                                    <input id="lengJAVA" type="radio" name="leng" onclick="cambiarLeng('JAVA')" checked>
                                                     <span class="slider round"></span>
                                                 </label>
                                                 Php
@@ -313,7 +314,7 @@
                                             <div class="ibox-content" >
                                                 MySql
                                                 <label class="switch">
-                                                    <input id="gestorMYSQL" type="checkbox" onclick="cambiarGestor('MYSQL')" >
+                                                    <input id="gestorMYSQL" type="checkbox" onclick="cambiarGestor('MYSQL')" checked>
                                                     <span class="slider round"></span>
                                                 </label>
                                                 PostgreSql
@@ -376,21 +377,110 @@
                                             </div>
                                         </div>
                                         <div class="col-xs-12 col-md-6">
-                                            <div class="ibox-title">
-                                                <h3>¿Qué tal te ha parecido el viaje?</h3>
+                                            <div class="ibox-title flex" style="vertical-align: middle">
+                                                <h3><i class="fas fa-comments"></i>&nbsp;¿Qué tal te ha parecido el viaje?&nbsp; &nbsp; </h3>                                                
+                                                <p class="clasificacion">
+                                                    <input id="radio1" type="radio" name="estrellas" value="5">
+                                                    <label for="radio1">★</label>
+                                                    <input id="radio2" type="radio" name="estrellas" value="4">
+                                                    <label for="radio2">★</label>
+                                                    <input id="radio3" type="radio" name="estrellas" value="3">
+                                                    <label for="radio3">★</label>
+                                                    <input id="radio4" type="radio" name="estrellas" value="2">
+                                                    <label for="radio4">★</label>
+                                                    <input id="radio5" type="radio" name="estrellas" value="1">
+                                                    <label for="radio5">★</label>
+                                                </p>                                                
                                             </div>
-                                            <div class="ibox-content">                                                
-                                                <textarea placeholder="Remember, be nice!" rows="6" style="width: 100%"></textarea>
+                                            <div class="ibox-content">
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-sm-3 " style="padding: 0px;" >
+                                                        <div class="imageMain">
+                                                            <img id="imgComentario" src="images/reacciones/boss.png" alt="" style="width: 100%; height: auto;">
+                                                        </div>
+                                                        <a id="btnImagePicker" class="btn btn-default" onclick="mostrarImgPicker()">Cambiar</a>
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-9" >
+                                                        <textarea placeholder="Adelante, danos tu mejor golpe" rows="9" style="width: 100%"></textarea>
+                                                    </div>
+                                                </div>                                                
                                             </div>
-                                        </div>                                        
+                                            <a class="btn boton" onclick="enviarComentario()">Enviar tus opiniones</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>                        
+                        </div>
                     </div>
                 </div>    
 
             </div>            
+        </div>
+
+        <!-- imgagePicker -->
+        <div class="row" id="imagePicker">
+            <div class="col-xs-3">
+                <label onclick="cambiarReaccion('pokeRainbow')">
+                    <img src="images/reacciones/pokeRainbow.png" class="imgOption" alt="">
+                </label>
+            </div>
+            <div class="col-xs-3">                                                        
+                <label onclick="cambiarReaccion('boss')">
+                    <img src="images/reacciones/boss.png" class="imgOption" alt="">
+                </label>
+            </div>
+            <div class="col-xs-3">                                                        
+                <label onclick="cambiarReaccion('feliz')">
+                    <img src="images/reacciones/feliz.png" class="imgOption" alt="">
+                </label>
+            </div>
+            <div class="col-xs-3">                                                        
+                <label onclick="cambiarReaccion('gusta')">
+                    <img src="images/reacciones/gusta.png" class="imgOption" alt="">
+                </label>
+            </div>
+            <!-- first row -->
+            <div class="col-xs-3">                                                        
+                <label onclick="cambiarReaccion('troll')">
+                    <img src="images/reacciones/troll.png" class="imgOption" alt="">
+                </label>
+            </div>
+            <div class="col-xs-3">                                                        
+                <label onclick="cambiarReaccion('lol')">
+                    <img src="images/reacciones/lol.png" class="imgOption" alt="">
+                </label>
+            </div>
+            <div class="col-xs-3">                                                        
+                <label onclick="cambiarReaccion('challenge')">
+                    <img src="images/reacciones/challenge.png" class="imgOption" alt="">
+                </label>
+            </div>
+            <div class="col-xs-3">                                                        
+                <label onclick="cambiarReaccion('aburrido')">
+                    <img src="images/reacciones/aburrido.png" class="imgOption" alt="">
+                </label>
+            </div>
+            <!-- first row -->
+            <div class="col-xs-3">                                                        
+                <label onclick="cambiarReaccion('really')">
+                    <img src="images/reacciones/really.png" class="imgOption" alt="">
+                </label>
+            </div>
+            <div class="col-xs-3">
+                <label onclick="cambiarReaccion('fuck')">
+                    <img src="images/reacciones/fuck.png" class="imgOption" alt="">
+                </label>
+            </div>
+            <div class="col-xs-3">
+                <label onclick="cambiarReaccion('why')">
+                    <img src="images/reacciones/why.png" class="imgOption" alt="">
+                </label>
+            </div>
+            <div class="col-xs-3">
+                <label onclick="cambiarReaccion('asco')">
+                    <img src="images/reacciones/asco.png" class="imgOption" alt="">
+                </label>
+            </div>
         </div>
 
 
