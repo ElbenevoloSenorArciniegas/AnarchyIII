@@ -22,23 +22,24 @@
         <link href="css/plugins/jasny/jasny-bootstrap.min.css" rel="stylesheet">
         <link href="css/plugins/codemirror/codemirror.css" rel="stylesheet">
 
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">        
 
         
-           <link href="css/plugins/blueimp/css/blueimp-gallery.min.css" rel="stylesheet">
+              <link href="css/plugins/blueimp/css/blueimp-gallery.min.css" rel="stylesheet">
+     
+        
         <!-- ANARCHY styles -->
 
         <link rel="stylesheet" type="text/css" href="ANARCHY.css">
         <link rel="stylesheet" type="text/css" href="css/mensaje.css">
         <link rel="stylesheet" type="text/css" href="css/consola.css">
         <link rel="stylesheet" type="text/css" href="css/toggleButton.css">
-        <link rel="stylesheet" type="text/css" href="css/starrr.css">
         <script type="text/javascript" src="ANARCHY.js"></script>
         <script type="text/javascript" src="js/mensaje.js"></script>
         <script type="text/javascript" src="js/consola.js"></script>
         <script type="text/javascript" src="js/Ajax.js"></script>
         <script type="text/javascript" src="js/projectData.js"></script>
-        <script type="text/javascript" src="js/starrr.js"></script>
+        <script type="text/javascript" src="js/comentarios.js"></script>
 
 
 
@@ -77,8 +78,7 @@
 
         <!-- -------- paneles o puertas -->
         <aside id="panelLateral-left" class="panelLateral">   
-            
-            
+  
             <div class="panel-group" id="accordion">
                                     <div class="panel panel-default">
                                         <div class="panel-heading">
@@ -199,21 +199,8 @@
                                     </div>
                             
                                 </div>
-            
-            
-            
-            
-            
-            
-            
-            
-                     
 
-            
-        </aside>  
-        
-        
-        
+        </aside>        
         <aside id="panelLateral-right" class="panelLateral">
 
             <!--       ---------------------  BEGIN OF STARS ---------------------------           -->            
@@ -264,7 +251,7 @@
                         <img src="images/name2.png" style="display: block; margin: auto; width: 65%; height: 125px"/>
                     </div>
                     <div class="borde fondo" id="frase" style="padding: 7px">
-                        Esta es una cochina frase hecha a palito ( -w-)
+                        Error 404: Frase no encontrada
                     </div>            
                     <div  class="fondo mywizard borde">
                         <div class="tabs-container" style="min-height: 100%">
@@ -321,26 +308,18 @@
                                     </div>
                                 </div>                                
                                 <div role="tabpanel" id="tab-2" class="tab-pane">
-                              
-                                    <div class="  panel-body row" >
-                                  
+                                    <div class="panel-body row" >
                                         <div class="col-xs-12 col-md-5">
-                                     <hr style="border-color:black;">     
-                          <div class="panel-group" id="accordion-test-2"> 
-                              <div class="panel panel-info "style="background-color: #ffa500" > 
-                                        <div class="panel-heading " style="background-color: #ffa500"> 
-                                            <h4  class="panel-title " style="font-size: 18px ;    padding: 15px "> 
-                                                <a data-toggle="collapse" data-parent="#accordion-test-2" href="#collapseOne-2" aria-expanded="false" class="collapsed">
-                                                     ¿Qué lenguaje usarás?                                               </a> 
-                                            </h4> 
-                                        </div> 
-                                        <div id="collapseOne-2" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;"> 
-                                            <div class="panel-body">
-                                               
-                                              
+                                            <div class="ibox-title">
+                                                <h3>
+                                                    <i class="fas fa-laptop-code"></i>
+                                                    ¿Qué lenguaje usarás?
+                                                </h3>
+                                            </div>
+                                            <div class="ibox-content">
                                                 Java
                                                 <label class="switch">
-                                                    <input id="lengJAVA" type="radio" name="leng" onclick="cambiarLeng('JAVA')">
+                                                    <input id="lengJAVA" type="radio" name="leng" onclick="cambiarLeng('JAVA')" checked>
                                                     <span class="slider round"></span>
                                                 </label>
                                                 Php
@@ -348,26 +327,17 @@
                                                     <input id="lengPHP" name="leng" type="radio" onclick="cambiarLeng('PHP')">
                                                     <span class="slider round"></span>
                                                 </label>                                            
-                                            
-                                                
-                                                
-                                            </div> 
-                                        </div> 
-                                    </div>
-                                    <div class="panel panel-purple panel-color" style="background-color: #ffa500"> 
-                                        <div class="panel-heading" style="background-color: #ffa500"> 
-                                            <h4 class="panel-title" style=" font-size: 18px;  padding: 15px "> 
-                                                <a data-toggle="collapse" data-parent="#accordion-test-2" href="#collapseTwo-2" class="collapsed" aria-expanded="false">
-                                                     ¿Qué gestores de BD deseas implementar?
-                                                </a> 
-                                            </h4> 
-                                        </div> 
-                                        <div id="collapseTwo-2" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;"> 
-                                            <div class="panel-body">
-                                                <div class="ibox-content" >
+                                            </div>
+                                            <div class="ibox-title">
+                                                <h3>
+                                                    <i class="fas fa-hdd"></i>
+                                                    ¿Qué gestores de BD deseas implementar?
+                                                </h3>
+                                            </div>
+                                            <div class="ibox-content" >
                                                 MySql
                                                 <label class="switch">
-                                                    <input id="gestorMYSQL" type="checkbox" onclick="cambiarGestor('MYSQL')" >
+                                                    <input id="gestorMYSQL" type="checkbox" onclick="cambiarGestor('MYSQL')" checked>
                                                     <span class="slider round"></span>
                                                 </label>
                                                 PostgreSql
@@ -380,17 +350,7 @@
                                                     <input id="gestorORACLE" type="checkbox" onclick="cambiarGestor('ORACLE')">
                                                     <span class="slider round"></span>
                                                 </label>
-                                            </div>  
-                                            </div> 
-                                        </div> 
-                                    </div> 
-                                
-                                </div> 
-                                            
-                                            
-                                            
-                                            
-                                         
+                                            </div>
                                         </div>
                                         <div class="col-xs-12 col-md-7">
                                             <div class="ibox-title">
@@ -440,61 +400,114 @@
                                             </div>
                                         </div>
                                         <div class="col-xs-12 col-md-6">
-                                            <div class="ibox-title">
-                                                <h3>¿Qué tal te ha parecido el viaje?</h3>
+                                            <div class="ibox-title flex" style="vertical-align: middle">
+                                                <h3><i class="fas fa-comments"></i>&nbsp;¿Qué tal te ha parecido el viaje?&nbsp; &nbsp; </h3>                                                
+                                                <p class="clasificacion">
+                                                    <input id="radio1" type="radio" name="estrellas" value="5">
+                                                    <label for="radio1" onclick="cambiarCalificacion(5)">★</label>
+                                                    <input id="radio2" type="radio" name="estrellas" value="4">
+                                                    <label for="radio2" onclick="cambiarCalificacion(4)">★</label>
+                                                    <input id="radio3" type="radio" name="estrellas" value="3">
+                                                    <label for="radio3" onclick="cambiarCalificacion(3)">★</label>
+                                                    <input id="radio4" type="radio" name="estrellas" value="2">
+                                                    <label for="radio4" onclick="cambiarCalificacion(2)">★</label>
+                                                    <input id="radio5" type="radio" name="estrellas" value="1">
+                                                    <label for="radio5" onclick="cambiarCalificacion(1)">★</label>
+                                                </p>                                                
                                             </div>
-                                            <div class="ibox-content">   
-                     
-                          <textarea class="form-control"  placeholder="Remember, be nice!" rows="6"></textarea>
+                                            <div class="ibox-content">
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-sm-3 " style="padding: 0px;" >
+                                                        <div class="imageMain">
+                                                            <img id="imgComentario" src="images/reacciones/boss.png" alt="" style="width: 100%; height: auto;">
+                                                        </div>
+                                                        <a id="btnImagePicker" class="btn btn-default" onclick="mostrarImgPicker()">Cambiar</a>
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-9" >
+                                                        <textarea id="comentarioMsg" placeholder="Adelante, danos tu mejor golpe" rows="9" style="width: 100%"></textarea>
+                                                    </div>
+                                                </div>                                                
                                             </div>
-                                            
-                                              <form>
-  <p class="clasificacion">
-    <input id="radio1" type="radio" name="estrellas" value="5"><!--
-    --><label style="font-size: 30px" for="radio1">★</label><!--
-    --><input id="radio2" type="radio" name="estrellas" value="4"><!--
-    --><label style="font-size: 30px" for="radio2">★</label><!--
-    --><input  style="font-size: 30px" id="radio3" type="radio" name="estrellas" value="3"><!--
-    --><label style="font-size: 30px" for="radio3">★</label><!--
-    --><input style="font-size: 30px" id="radio4" type="radio" name="estrellas" value="2"><!--
-    --><label style="font-size: 30px" for="radio4">★</label><!--
-    --><input id="radio5" type="radio" name="estrellas" value="1"><!--
-    --><label style="font-size: 30px" for="radio5">★</label>
-  </p>
-</form>
-                                            
-
-                                            
-                                            
-                                        </div>                                        
+                                            <a class="btn boton" onclick="enviarComentario()">Enviar tus opiniones</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>                        
+                        </div>
                     </div>
                 </div>    
 
             </div>            
         </div>
 
+        <!-- imgagePicker -->
+        <div class="row" id="imagePicker">
+            <div class="col-xs-3">
+                <label onclick="cambiarReaccion('pokeRainbow')">
+                    <img src="images/reacciones/pokeRainbow.png" class="imgOption" alt="">
+                </label>
+            </div>
+            <div class="col-xs-3">                                                        
+                <label onclick="cambiarReaccion('boss')">
+                    <img src="images/reacciones/boss.png" class="imgOption" alt="">
+                </label>
+            </div>
+            <div class="col-xs-3">                                                        
+                <label onclick="cambiarReaccion('feliz')">
+                    <img src="images/reacciones/feliz.png" class="imgOption" alt="">
+                </label>
+            </div>
+            <div class="col-xs-3">                                                        
+                <label onclick="cambiarReaccion('gusta')">
+                    <img src="images/reacciones/gusta.png" class="imgOption" alt="">
+                </label>
+            </div>
+            <!-- first row -->
+            <div class="col-xs-3">                                                        
+                <label onclick="cambiarReaccion('troll')">
+                    <img src="images/reacciones/troll.png" class="imgOption" alt="">
+                </label>
+            </div>
+            <div class="col-xs-3">                                                        
+                <label onclick="cambiarReaccion('lol')">
+                    <img src="images/reacciones/lol.png" class="imgOption" alt="">
+                </label>
+            </div>
+            <div class="col-xs-3">                                                        
+                <label onclick="cambiarReaccion('challenge')">
+                    <img src="images/reacciones/challenge.png" class="imgOption" alt="">
+                </label>
+            </div>
+            <div class="col-xs-3">                                                        
+                <label onclick="cambiarReaccion('aburrido')">
+                    <img src="images/reacciones/aburrido.png" class="imgOption" alt="">
+                </label>
+            </div>
+            <!-- first row -->
+            <div class="col-xs-3">                                                        
+                <label onclick="cambiarReaccion('really')">
+                    <img src="images/reacciones/really.png" class="imgOption" alt="">
+                </label>
+            </div>
+            <div class="col-xs-3">
+                <label onclick="cambiarReaccion('fuck')">
+                    <img src="images/reacciones/fuck.png" class="imgOption" alt="">
+                </label>
+            </div>
+            <div class="col-xs-3">
+                <label onclick="cambiarReaccion('why')">
+                    <img src="images/reacciones/why.png" class="imgOption" alt="">
+                </label>
+            </div>
+            <div class="col-xs-3">
+                <label onclick="cambiarReaccion('asco')">
+                    <img src="images/reacciones/asco.png" class="imgOption" alt="">
+                </label>
+            </div>
+        </div>
 
-
-        <!-- Mainly scripts -->
-        <script src="js/jquery-3.1.1.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
-        <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-
-        <!-- Custom and plugin javascript -->
-        <script src="js/inspinia.js"></script>
-        <script src="js/plugins/pace/pace.min.js"></script>
-
-        <!-- Steps -->
-        <script src="js/plugins/steps/jquery.steps.min.js"></script>
-
-        <!-- Jquery Validate -->
-        <script src="js/plugins/validate/jquery.validate.min.js"></script>
-
+        
+        
           <!-- blueimp gallery -->
     <script src="js/plugins/blueimp/jquery.blueimp-gallery.min.js"></script>
 
@@ -513,6 +526,26 @@
 </script>
 
 
+        <!-- Mainly scripts -->
+        <script src="js/jquery-3.1.1.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+        <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+        <!-- Custom and plugin javascript -->
+        <script src="js/inspinia.js"></script>
+        <script src="js/plugins/pace/pace.min.js"></script>
+
+        <!-- Steps -->
+        <script src="js/plugins/steps/jquery.steps.min.js"></script>
+
+        <!-- Jquery Validate -->
+        <script src="js/plugins/validate/jquery.validate.min.js"></script>
+
+
+
+
+
         <!-- Jasny -->
         <script src="js/plugins/jasny/jasny-bootstrap.min.js"></script>
 
@@ -523,21 +556,9 @@
         <!-- CodeMirror -->
         <script src="js/plugins/codemirror/codemirror.js"></script>
         <script src="js/plugins/codemirror/mode/xml/xml.js"></script>
-        
-        
-        <script>
-   $('#Estrellas').starrr({
-       rating:3,
-       change:function(e,valor){
-           alert(valor);
-           
-       }
-       
-   });
-    
-    </script>
 
     </body>
 
 
 </html>
+      
