@@ -47,5 +47,5 @@ function mostrarMensajito(json) {
 
 function ocultarMensajito() {
 	document.getElementById("mensaje").style.opacity=0;
-        setTimeout(document.getElementById("mensaje").style.right="133%",2000);
+        setTimeout(document.getElementById("mensaje").style.right="10000px",2000);
 }

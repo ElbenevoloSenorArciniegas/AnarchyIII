@@ -33,19 +33,32 @@ function postCargarDatos(result, state) {
         document.getElementById("numLineas").innerHTML = json.numLineas;
         document.getElementById("numProyectos").innerHTML = json.numProyectos;
         var com = "";
+
+        var bandera = true;
         for (var i = 0; i < json.comentarios.length; i++) {
             var comentario = json.comentarios[i];
             var estrellas = pintarEstrellas(comentario.calificacion);
+            var contenido = "";
+            if (bandera) {
+                contenido = ""
+                        + "<img src='images/reacciones/" + comentario.img + ".png' class='ibox-avatar' style='width:75px; height:75px; margin-right:10px' >"
+                        + "<p>" + comentario.msg + "</p>";
+            } else {
+                contenido = ""
+                        + "<div style='width:90%;'><p class='align-der'>" + comentario.msg + "</p></div>"
+                        + "<img src='images/reacciones/" + comentario.img + ".png' class='ibox-avatar' style='width:75px; height:75px; margin-left:10px;float: right;' >";
+            }
+            bandera = !bandera;
             com += ""
-                    + "<div class='ibox'>"
+                    + "<div class='ibox' style='margin-bottom:0px;'>"
                     + "<div class='ibox-title'>"
                     + comentario.fecha
                     + "<span style='float: right;'>"
                     + estrellas
                     + "</span>"
                     + "</div>"
-                    + "<div class='ibox-content'>"
-                    + comentario.msg
+                    + "<div class='ibox-content flex'>"
+                    + contenido
                     + "</div>"
                     + "</div>";
         }
@@ -83,7 +96,7 @@ function postDescargar(result, state) {
         var msg = {
             tipo: "danger",
             titulo: "Lo sentimos",
-            cuerpo: "El servidor no ha podido completar la solicitud<br>"+result,
+            cuerpo: "El servidor no ha podido completar la solicitud<br>" + result,
             avatar: "gatoMistico.png"
         };
         mostrarMensajito(msg);
