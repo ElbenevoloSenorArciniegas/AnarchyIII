@@ -76,15 +76,25 @@
             </div>
         </div>
 
+        <!-- galería de imagenes grandes -->
+        <div id="blueimp-gallery" class="blueimp-gallery">
+            <div class="slides"></div>
+            <h3 class="title"></h3>
+            <a class="prev">‹</a>
+            <a class="next">›</a>
+            <a class="close">×</a>
+            <a class="play-pause"></a>
+            <ol class="indicator"></ol>
+        </div>
+
         <!-- -------- paneles o puertas -->
         <aside id="panelLateral-left" class="panelLateral">   
 
             <div class="panel-group" id="accordion">
                 <div class="panel panel-default">
-                    <div class="panel-heading">
+                    <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" class="collapsed">
                         <h5 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" 
-                               class="collapsed">  ¿Nuevo en Anarchy?       </a>
+                            <a>¿Nuevo en Anarchy?</a>
                         </h5>
                     </div>
                     <div id="collapseOne" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
@@ -124,46 +134,41 @@
                     </div>
                 </div>
                 <div class="panel panel-default">
-                    <div class="panel-heading">
+                    <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="collapsed" aria-expanded="false">
                         <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="collapsed" 
-                               aria-expanded="false">Genial, ya generé el código ¿y ahora qué?</a>
+                            <a>Genial, ya generé el código ¿y ahora qué?</a>
                         </h4>
                     </div>
-                    <div id="collapseTwo" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                    <div id="collapseTwo" class="panel-collapse collapse" aria-expanded="false" style="height: 0px; text-align: left;">
                         <div class="panel-body" style="background-color: white">
                             <div class="ibox-content">
-                                <div class="scroll_content">
+                                <div class="panel-scroll">
                                     <p class="ibox-text ">
                                         Hay 4 pequeñísimos pasos que debes realizar en tu código generado para que pueda funcionar:
                                     </p>
                                     <h3 class="ibox-title">1. Propiedades de base de datos</h3>
                                     <h5 class="ibox-subtitle">back/dao/properties</h5>
-                                    <div  class="lightBoxGallery" class="flex">
-                                        <a href="img/gallery/properties.jpg"  data-gallery=""><img src="img/gallery/properties_s.jpg"></a>
-
-                                        <p class="ibox-text ">
-                                            Este archivo es importante en extremo. En él deben colocarse los datos de acceso a cada base de datos que vaya a utilizar.
-                                            <br>
-                                            DB_NAME debe ser cambiado por (¡adivinaste!) el nombre de la base de datos. Recuerde que debe coincidir con el utilizado en el controlador (paso 2).
-                                            <br>
-                                            host debe tener la url donde se aloja la base de datos, incluyendo el puerto.
-                                            <br>
-                                            username contendrá el nombre de acceso a la base de datos, y password (¡adivinas otra vez!) la contraseña para el mismo fin. 
-                                        </p>
-                                    </div>   
-                                    <div id="blueimp-gallery" class="blueimp-gallery">
-                                        <div class="slides"></div>
-                                        <h3 class="title"></h3>
-                                        <a class="prev">‹</a>
-                                        <a class="next">›</a>
-                                        <a class="close">×</a>
-                                        <a class="play-pause"></a>
-                                        <ol class="indicator"></ol>
-                                    </div>
-
+                                    <h1>
+                                        <a href="images/manual/properties.jpg"  data-gallery="">
+                                            <i class="fas fa-images"></i>
+                                        </a>
+                                    </h1>
+                                    <p class="ibox-text ">
+                                        Este archivo es importante en extremo. En él deben colocarse los datos de acceso a cada base de datos que vaya a utilizar.
+                                        <br>
+                                        DB_NAME debe ser cambiado por (¡adivinaste!) el nombre de la base de datos. Recuerde que debe coincidir con el utilizado en el controlador (paso 2).
+                                        <br>
+                                        host debe tener la url donde se aloja la base de datos, incluyendo el puerto.
+                                        <br>
+                                        username contendrá el nombre de acceso a la base de datos, y password (¡adivinas otra vez!) la contraseña para el mismo fin. 
+                                    </p>
                                     <h3 class="ibox-title">2. Controlador global</h3>
                                     <h5 class="ibox-subtitle">back/facade/globalController</h5>
+                                    <h1>
+                                        <a href="images/manual/globalController.jpg"  data-gallery="">
+                                            <i class="fas fa-images"></i>
+                                        </a>
+                                    </h1>
                                     <p class="ibox-text ">
                                         Define nuevamente el nombre de la base de datos y el gestor de conexión a la misma en los campos <i> DEFAULT_DBNAME y DEFAULT_GESTOR</i>
                                         <br>
@@ -178,6 +183,11 @@
                                     <h3 class="ibox-title">3. Ruta del archivo properties</h3>
                                     <h5 class="ibox-subtitle">back/Dao/conexion</h5>
                                     <strong>Sólo necesario para proyectos Java web.</strong>                    
+                                    <h1>
+                                        <a href="images/manual/rutaProperties.jpg"  data-gallery="">
+                                            <i class="fas fa-images"></i>
+                                        </a>
+                                    </h1>
                                     <p class="ibox-text ">
                                         Define la ruta absoluta del archivo properties.ini (sí, el del primer paso) dentro del método <i>leerProperties()</i> para que pueda ser leido, ya que la ruta relativa puede fallar en tiempo de ejecución.
                                     </p>
@@ -197,9 +207,42 @@
                         </div>
                     </div>
                 </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapse3" class="collapsed" aria-expanded="false">
+                        <h4 class="panel-title">
+                            <a>¿Qué es? ¿qué hace? y ¿por qué está ahí?</a>
+                        </h4>
+                    </div>
+                    <div id="collapse3" class="panel-collapse collapse" aria-expanded="false" style="height: 0px; text-align: left;">
+                        <div class="panel-body" style="background-color: white">
 
-            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapse4" class="collapsed" aria-expanded="false">
+                        <h4 class="panel-title">
+                            <a>¿Quiénes somos?</a>
+                        </h4>
+                    </div>
+                    <div id="collapse4" class="panel-collapse collapse" aria-expanded="false" style="height: 0px; text-align: left;">
+                        <div class="panel-body" style="background-color: white">
 
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapse5" class="collapsed" aria-expanded="false">
+                        <h4 class="panel-title">
+                            <a>Nuestras políticas</a>
+                        </h4>
+                    </div>
+                    <div id="collapse5" class="panel-collapse collapse" aria-expanded="false" style="height: 0px; text-align: left;">
+                        <div class="panel-body" style="background-color: white">
+
+                        </div>
+                    </div>
+                </div>
         </aside>        
         <aside id="panelLateral-right" class="panelLateral">
 

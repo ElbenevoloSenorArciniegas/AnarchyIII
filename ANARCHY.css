@@ -139,6 +139,13 @@ body{
     text-shadow: 0px -1px 2px grey, 0px -2px 2px orange, 0px -3px 2px red;
     font-weight: 600;
     font-size: 14px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.panel-scroll{
+    max-height: 450px;
+    overflow-y: scroll;
 }
 
 .active > .panel-title{
@@ -156,7 +163,10 @@ body{
     display: flex;
 }
 
-
+.ibox-text{
+    text-align: left;
+    padding: 5px;
+}
 
 .ibox-avatar{
     width: 125px;
