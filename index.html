@@ -24,10 +24,10 @@
 
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">        
 
-        
-              <link href="css/plugins/blueimp/css/blueimp-gallery.min.css" rel="stylesheet">
-     
-        
+
+        <link href="css/plugins/blueimp/css/blueimp-gallery.min.css" rel="stylesheet">
+
+
         <!-- ANARCHY styles -->
 
         <link rel="stylesheet" type="text/css" href="ANARCHY.css">
@@ -78,127 +78,127 @@
 
         <!-- -------- paneles o puertas -->
         <aside id="panelLateral-left" class="panelLateral">   
-  
-            <div class="panel-group" id="accordion">
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading">
-                                            <h5 class="panel-title">
-                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" 
-                                                   class="collapsed">  ¿Nuevo en Anarchy?       </a>
-                                            </h5>
-                                        </div>
-                                        <div id="collapseOne" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
-                                            <div class="panel-body" style="background-color: white">
-                                                                  <div class="ibox-content "
-                                                                       >                    
-                            <div class="flex">
-                                <img src="images/RichUncleSkeleton.png" class="ibox-avatar">
-                                <div>
-                                    <h3 class="ibox-title">Arma tu modelo de datos</h3>
-                                    <p class="ibox-text ">
-                                        Diseña tu base de datos y préstanos el SQL un instante para mapear las tablas y armar los objetos del proyecto. 
-                                    </p>                            
-                                </div>
-                            </div>
 
-                            <div class="flex">                        
-                                <div class="align-der">
-                                    <h3 class="ibox-title">Dinos cómo quieres que esté hecho el proyecto</h3>
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h5 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" 
+                               class="collapsed">  ¿Nuevo en Anarchy?       </a>
+                        </h5>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                        <div class="panel-body" style="background-color: white">
+                            <div class="ibox-content "
+                                 >                    
+                                <div class="flex">
+                                    <img src="images/RichUncleSkeleton.png" class="ibox-avatar">
+                                    <div>
+                                        <h3 class="ibox-title">Arma tu modelo de datos</h3>
+                                        <p class="ibox-text ">
+                                            Diseña tu base de datos y préstanos el SQL un instante para mapear las tablas y armar los objetos del proyecto. 
+                                        </p>                            
+                                    </div>
+                                </div>
+
+                                <div class="flex">                        
+                                    <div class="align-der">
+                                        <h3 class="ibox-title">Dinos cómo quieres que esté hecho el proyecto</h3>
+                                        <p class="ibox-text ">
+                                            Establece el lenguaje de programación, quién se encargará de manejar los datos, cómo quieres que se vea, entre otras opciones.
+                                        </p>
+                                    </div>
+                                    <img src="images/gatoMistico.png" class="ibox-avatar">
+                                </div>
+
+                                <div class="flex">
+                                    <img src="images/Merlina.png" class="ibox-avatar">
+                                    <div>
+                                        <h3 class="ibox-title">Dinos cómo quieres que funcione</h3>
+                                        <p class="ibox-text ">
+                                            Entréganos una lista de requerimientos funcionales y ve a comer algo mientras nuestros esclavos los programan. Tendrás el código fuente listo para descargar en unos pocos segundos.
+                                        </p>                            
+                                    </div>
+                                </div>
+                            </div>     </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="collapsed" 
+                               aria-expanded="false">Genial, ya generé el código ¿y ahora qué?</a>
+                        </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                        <div class="panel-body" style="background-color: white">
+                            <div class="ibox-content">
+                                <div class="scroll_content">
                                     <p class="ibox-text ">
-                                        Establece el lenguaje de programación, quién se encargará de manejar los datos, cómo quieres que se vea, entre otras opciones.
+                                        Hay 4 pequeñísimos pasos que debes realizar en tu código generado para que pueda funcionar:
+                                    </p>
+                                    <h3 class="ibox-title">1. Propiedades de base de datos</h3>
+                                    <h5 class="ibox-subtitle">back/dao/properties</h5>
+                                    <div  class="lightBoxGallery" class="flex">
+                                        <a href="img/gallery/properties.jpg"  data-gallery=""><img src="img/gallery/properties_s.jpg"></a>
+
+                                        <p class="ibox-text ">
+                                            Este archivo es importante en extremo. En él deben colocarse los datos de acceso a cada base de datos que vaya a utilizar.
+                                            <br>
+                                            DB_NAME debe ser cambiado por (¡adivinaste!) el nombre de la base de datos. Recuerde que debe coincidir con el utilizado en el controlador (paso 2).
+                                            <br>
+                                            host debe tener la url donde se aloja la base de datos, incluyendo el puerto.
+                                            <br>
+                                            username contendrá el nombre de acceso a la base de datos, y password (¡adivinas otra vez!) la contraseña para el mismo fin. 
+                                        </p>
+                                    </div>   
+                                    <div id="blueimp-gallery" class="blueimp-gallery">
+                                        <div class="slides"></div>
+                                        <h3 class="title"></h3>
+                                        <a class="prev">‹</a>
+                                        <a class="next">›</a>
+                                        <a class="close">×</a>
+                                        <a class="play-pause"></a>
+                                        <ol class="indicator"></ol>
+                                    </div>
+
+                                    <h3 class="ibox-title">2. Controlador global</h3>
+                                    <h5 class="ibox-subtitle">back/facade/globalController</h5>
+                                    <p class="ibox-text ">
+                                        Define nuevamente el nombre de la base de datos y el gestor de conexión a la misma en los campos <i> DEFAULT_DBNAME y DEFAULT_GESTOR</i>
+                                        <br>
+                                        Actualmente Anarchy soporta las constantes:
+                                    <ul>
+                                        <li>MYSQL_FACTORY</li>
+                                        <li>POSTGRESQL_FACTORY</li>
+                                        <li>ORACLE_FACTORY</li>
+                                    </ul>
+                                    </p>
+
+                                    <h3 class="ibox-title">3. Ruta del archivo properties</h3>
+                                    <h5 class="ibox-subtitle">back/Dao/conexion</h5>
+                                    <strong>Sólo necesario para proyectos Java web.</strong>                    
+                                    <p class="ibox-text ">
+                                        Define la ruta absoluta del archivo properties.ini (sí, el del primer paso) dentro del método <i>leerProperties()</i> para que pueda ser leido, ya que la ruta relativa puede fallar en tiempo de ejecución.
+                                    </p>
+
+                                    <h3 class="ibox-title">4. Make Anarchy great again!</h3>
+                                    <p class="ibox-text ">
+                                        Y así terminamos nuestro curso intensivo. ¿Difícil?
+                                        <br>
+                                        <br>
+                                        De ahora en adelante, cada bug será culpa tuya; a menos, claro, que nos dones cualquier dinerillo que te nazca del corazón para que sigamos creciendo.
+                                        <br>
+                                        <br>
+                                        Recuerda, nuestra meta es hacer a los programadores cada vez más vagos.                        
                                     </p>
                                 </div>
-                                <img src="images/gatoMistico.png" class="ibox-avatar">
                             </div>
-
-                            <div class="flex">
-                                <img src="images/Merlina.png" class="ibox-avatar">
-                                <div>
-                                    <h3 class="ibox-title">Dinos cómo quieres que funcione</h3>
-                                    <p class="ibox-text ">
-                                        Entréganos una lista de requerimientos funcionales y ve a comer algo mientras nuestros esclavos los programan. Tendrás el código fuente listo para descargar en unos pocos segundos.
-                                    </p>                            
-                                </div>
-                            </div>
-                        </div>     </div>
-                                        </div>
-                                    </div>
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading">
-                                            <h4 class="panel-title">
-                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="collapsed" 
-                                                   aria-expanded="false">Genial, ya generé el código ¿y ahora qué?</a>
-                                            </h4>
-                                        </div>
-                                        <div id="collapseTwo" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
-                                            <div class="panel-body" style="background-color: white">
-                                                                            <div class="ibox-content">
-                                                                                 <div class="scroll_content">
-                            <p class="ibox-text ">
-                                Hay 4 pequeñísimos pasos que debes realizar en tu código generado para que pueda funcionar:
-                            </p>
-                            <h3 class="ibox-title">1. Propiedades de base de datos</h3>
-                            <h5 class="ibox-subtitle">back/dao/properties</h5>
-                            <div  class="lightBoxGallery" class="flex">
-                                <a href="img/gallery/properties.jpg"  data-gallery=""><img src="img/gallery/properties_s.jpg"></a>
-                              
-                                <p class="ibox-text ">
-                                    Este archivo es importante en extremo. En él deben colocarse los datos de acceso a cada base de datos que vaya a utilizar.
-                                    <br>
-                                    DB_NAME debe ser cambiado por (¡adivinaste!) el nombre de la base de datos. Recuerde que debe coincidir con el utilizado en el controlador (paso 2).
-                                    <br>
-                                    host debe tener la url donde se aloja la base de datos, incluyendo el puerto.
-                                    <br>
-                                    username contendrá el nombre de acceso a la base de datos, y password (¡adivinas otra vez!) la contraseña para el mismo fin. 
-                                </p>
-                            </div>   
-                                 <div id="blueimp-gallery" class="blueimp-gallery">
-                                <div class="slides"></div>
-                                <h3 class="title"></h3>
-                                <a class="prev">‹</a>
-                                <a class="next">›</a>
-                                <a class="close">×</a>
-                                <a class="play-pause"></a>
-                                <ol class="indicator"></ol>
-                            </div>
-
-                            <h3 class="ibox-title">2. Controlador global</h3>
-                            <h5 class="ibox-subtitle">back/facade/globalController</h5>
-                            <p class="ibox-text ">
-                                Define nuevamente el nombre de la base de datos y el gestor de conexión a la misma en los campos <i> DEFAULT_DBNAME y DEFAULT_GESTOR</i>
-                                <br>
-                                Actualmente Anarchy soporta las constantes:
-                            <ul>
-                                <li>MYSQL_FACTORY</li>
-                                <li>POSTGRESQL_FACTORY</li>
-                                <li>ORACLE_FACTORY</li>
-                            </ul>
-                            </p>
-
-                            <h3 class="ibox-title">3. Ruta del archivo properties</h3>
-                            <h5 class="ibox-subtitle">back/Dao/conexion</h5>
-                            <strong>Sólo necesario para proyectos Java web.</strong>                    
-                            <p class="ibox-text ">
-                                Define la ruta absoluta del archivo properties.ini (sí, el del primer paso) dentro del método <i>leerProperties()</i> para que pueda ser leido, ya que la ruta relativa puede fallar en tiempo de ejecución.
-                            </p>
-
-                            <h3 class="ibox-title">4. Make Anarchy great again!</h3>
-                            <p class="ibox-text ">
-                                Y así terminamos nuestro curso intensivo. ¿Difícil?
-                                <br>
-                                <br>
-                                De ahora en adelante, cada bug será culpa tuya; a menos, claro, que nos dones cualquier dinerillo que te nazca del corazón para que sigamos creciendo.
-                                <br>
-                                <br>
-                                Recuerda, nuestra meta es hacer a los programadores cada vez más vagos.                        
-                            </p>
                         </div>
-                        </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                            
-                                </div>
+                    </div>
+                </div>
+
+            </div>
 
         </aside>        
         <aside id="panelLateral-right" class="panelLateral">
@@ -506,24 +506,9 @@
             </div>
         </div>
 
-        
-        
-          <!-- blueimp gallery -->
-    <script src="js/plugins/blueimp/jquery.blueimp-gallery.min.js"></script>
 
-  <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-<script>
 
-    $(document).ready(function () {
 
-        // Add slimscroll to element
-        $('.scroll_content').slimscroll({
-            height: '200px'
-        })
-
-    });
-
-</script>
 
 
         <!-- Mainly scripts -->
@@ -557,8 +542,24 @@
         <script src="js/plugins/codemirror/codemirror.js"></script>
         <script src="js/plugins/codemirror/mode/xml/xml.js"></script>
 
+        <!-- blueimp gallery -->
+        <script src="js/plugins/blueimp/jquery.blueimp-gallery.min.js"></script>
+
+        <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+        <script>
+
+                    $(document).ready(function () {
+
+                        // Add slimscroll to element
+                        $('.scroll_content').slimscroll({
+                            height: '200px'
+                        })
+
+                    });
+
+        </script>
+
     </body>
 
 
 </html>
-      
