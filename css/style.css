@@ -4083,8 +4083,8 @@ table.table-mail tr td {
   border-color: #23c6c8;
 }
 .panel-info > .panel-heading {
-  background-color: #23c6c8;
-  border-color: #23c6c8;
+  background-color: #ffa500;
+  border-color: #000000;
   color: #ffffff;
 }
 .panel-warning {
